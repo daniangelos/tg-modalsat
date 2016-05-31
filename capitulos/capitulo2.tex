@@ -1,23 +1,69 @@
 \chapter{Revisão Teórica}
 \section{Lógica Modal}
 \label{sec:l_gica_modal}
+Neste capítulo, introduziremos a lógica modal através do sistema $S5$. Este
+sistema, apesar de ser um dos mais simples possíveis, possui algumas das
+principais características do sistema de lógica modal, e essas serão ilustradas
+a partir dele. 
 
-A base da estrutura do pensamento modal data desde o filósofo Leibniz: uma
+O sistema $S5$ é determinado semanticamente por uma avaliação de necessidade e
+possibilidade.
+Isto é, em resumo %forçado
+, a base da estrutura do pensamento modal que data desde o filósofo Leibniz: uma
 proposição é \textit{necessária} se ocorre em todos os possíveis mundos 
-e \textit{possível} se ocorre em algum mundo.
+e \textit{possível} se ocorre em algum mundo~\cite{chellas:modal_logic}.
+A ideia é que coisas %revise
+diferentes podem ser verdadeiras em mundos diferentes, mas qualquer que ocorra
+em todos os possíveis mundos é necessário, enquanto o que ocorre em pelo menos
+um mundo é possível.
 
+%As proposições são da forma $\Box A$
+%$\Diamond A$
 
+Uma sentença da forma $\Box A$ --- \textit{necessariamente} $A$ --- é verdadeira se,
+e somente se, $A$ é uma proposição verdadeira em todos os possíveis mundos; já
+uma sentença da forma $\Diamond A$ --- \textit{possivelmente} $A$ --- é verdadeira
+no caso em que $A$ é uma proposição verdadeira em algum possível mundo.
 
+Uma ilustração válida é uma coleção de possíveis mundos, incluindo nosso
+próprio, o mundo real, onde sentenças da linguagem são possivelmente verdadeiras
+ou falsas. O propósito principal da lógica modal é modelar isto, e isto é feito
+listando uma sequência possivelmente infinita de conjuntos de possíveis mundos,
+\begin{equation}
+    P_0,\ P_1,\ P_2,\ldots
+\end{equation}
 
+A intuição por trás deste modelo é que, para cada número natural $n$, o conjunto
+$P_n$ contém somente os possíveis mundos onde a sentença $\mathbb{P}_n$ é
+verdadeira. Em outras palavras, a sequência 
+$P_0,\ P_1,\ P_2,\ldots$
+ilustra as sentenças atômicas estipulando em quais possíveis mundos elas
+ocorrem, e.g onde são verdadeiras,
+(e, por omissão, em quais mundos elas são falsas):
+\begin{equation}
+    \mathbb{P}_n\ is\ true\ at\ a\ possible\ world\ \alpha\ if\ and\ only\ if\
+    \alpha \in P_n 
+\end{equation}
 
+Um modelo no sistema $S5$ é, portanto, uma tupla:
+<$W$,~$P$>
+onde $W$ é um conjunto de possíveis mundos e $P$ uma abreviação para a sequência
+infinita 
+$P_0,\ P_1,\ P_2,\ldots$
+de subconjuntos de $W$.
+Note que $W$ pode conter mundos que não estão presentes em nenhum dos conjuntos
+$P_n$; de fato, qualquer um desses conjuntos pode ser vazio.
 
-
-texto.... referência~\cite{chomsky57}
-
-
-
-
-
-
+Definimos o valor da sentença (verdadeiro ou falso) de acordo com sua forma e em
+termos de um possível mundo em um modelo.
+Usamos a notação:
+\begin{equation}
+    \label{modal:truth}
+    \models ^{\mathcal{M}}_{\alpha} A 
+\end{equation}
+onde $A$ é uma sentença e $\alpha$ é um possível mundo em um modelo
+$\mathcal{M}=<W,P>$.
+A lei~\ref{modal:truth} é um resumo para: $A\ is\ true\ at\ \alpha\ in\
+\mathcal{M}$.
 
 
