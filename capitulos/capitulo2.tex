@@ -1,5 +1,5 @@
 \chapter{Revisão Teórica}
-\section{Lógica Modal}
+\section{Introdução a Lógica Modal}
 \label{sec:l_gica_modal}
 Neste capítulo, introduziremos a lógica modal através do sistema $S5$. Este
 sistema, apesar de ser um dos mais simples possíveis, possui algumas das
@@ -37,7 +37,7 @@ A intuição por trás deste modelo é que, para cada número natural $n$, o con
 $P_n$ contém somente os possíveis mundos onde a sentença $\mathbb{P}_n$ é
 verdadeira. Em outras palavras, a sequência 
 $P_0,\ P_1,\ P_2,\ldots$
-ilustra as sentenças atômicas estipulando em quais possíveis mundos elas
+ilustra as sentenças at\^omicas estipulando em quais possíveis mundos elas
 ocorrem, e.g onde são verdadeiras,
 (e, por omissão, em quais mundos elas são falsas):
 \begin{equation}
@@ -65,5 +65,157 @@ onde $A$ é uma sentença e $\alpha$ é um possível mundo em um modelo
 $\mathcal{M}=<W,P>$.
 A lei~\ref{modal:truth} é um resumo para: $A\ is\ true\ at\ \alpha\ in\
 \mathcal{M}$.
+
+As condições de verdade estão expressadas na Tabela~\ref{table:truth}.
+
+\begin{center}
+    \begin{table}[h!]
+\label{table:truth}
+    \caption{Truth conditions}
+
+    \begin{tabular}{ll}
+
+        \vspace{2mm}
+        (1) & $\models ^{\mathcal{M}}_{\alpha} \mathbb{P}_n$ se e somente se $\alpha \in
+        P_n$ com $n=0,1,2,\ldots$\\
+        \vspace{2mm}
+        (2)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        \vspace{2mm}
+        (3)  & $Not\ \models ^{\mathcal{M}}_{\alpha} $\\
+        \vspace{2mm}
+        (4)  & $\models ^{\mathcal{M}}_{\alpha} \neg A$ se e somente se $not\
+        \models ^{\mathcal{M}}_{\alpha} A$\\
+        \vspace{2mm}
+        (5)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        \vspace{2mm}
+        (6)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        \vspace{2mm}
+        (7)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        \vspace{2mm}
+        (8)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        \vspace{2mm}
+        (9)  & $\models ^{\mathcal{M}}_{\alpha} \Box A $\\
+        \vspace{2mm}
+        (10) & $\models ^{\mathcal{M}}_{\alpha} \Diamond A $\\
+
+    \end{tabular}
+\end{table}
+\end{center}
+
+Alguns esclarecimentos sobre essas definições podem ser úteis:
+\begin{itemize}
+    \item A cláusula (1) reflete a premissa sobre os conjuntos $P_0, P_1, P_2,
+        \ldots$ em um modelo: uma sentença at\^omica $\mathbb{P}_n$ é verdadeira
+        em um possível mundo $\alpha$ somente no caso em que $\alpha$ é um
+        elemento do conjunto $P_n$.
+    \item De acordo com a cláusula (2), a constante verdadeira $\top$ é sempre
+        válida em $\alpha$.
+    \item Por (3), a constante falsa $\bot$ é sempre falsa em $\alpha$.
+    \item A cláusula (4) afirma que a negação $\neg A$ é verdadeira em $\alpha$
+        se, e somente se, sua negação $A$ é falsa em $\alpha$.
+    \item A afirmação da cláusula (5) diz que uma conjunção $A \wedge B$ é
+        verdadeira em $\alpha$ somente no caso em que ambas sentenças, $A$ e
+        $B$ o são.
+    \item Já de acordo com a cláusula (6), uma disjunção $A \vee B$ é verdadeira
+        em $\alpha$ quando pelo menos uma das sentençãos, $A$ ou $B$ o é.
+    \item A inteção com a cláusula (7) é compreender que uma implicação $A \rightarrow
+        B$ é verdadeira em $\alpha$ desde que nunca ocorra que a sentença antecedente,
+        $A$, seja verdadeira ao mesmo tempo em que a consequente, $B$, seja
+        falsa.
+    \item Similarmente, na cláusula (8) a intenção se repete de ambos os lados,
+        ou seja, a condição $A \leftrightarrow B$ é verdadeira quando ambas
+        sentenças, $A$ e $B$, são verdadeiras, ou ambas são falsas.
+    \item A cláusua (9) formula a interpretação leibniziana de necessidade:
+        $\Box A$
+    \item Finalmente, de acordo com a cláusula (10), $\Diamond A$
+\end{itemize}
+
+Uma sentença verdadeira em cada mundo possível de todo modelo é chamada
+\textit{válida}. Usamos o símbolo $\models$ novamente, mas desta vez sem as
+marcações superior e inferior (para enfatizar que a sentença é válida, sem
+importar o mundo ou o modelo), e escrevemos $\models A$ quando $A$ é uma
+sentença válida.
+Mais formalmente, então, definimos a validade de uma sentença da seguinte forma:
+
+\begin{equation}
+    \models A\ se,\ e\ somente\ se,\ para\ todo\ modelo\ \mathcal{M}\ e\ para\ 
+    qualquer\ mundo\ \alpha\ em\ \mathcal{M},\ temos\ que\ \models ^{\mathcal{M}}_\alpha 
+\end{equation}
+
+
+%% KEEP ON BABY
+
+%??
+\section{Preliminares lógicas}
+\subsection{Sintaxe}
+
+Esta seção é dedicada a trazer o básico dos conceitos de sintaxe da linguagem da
+lógica modal. As definições formais apresentadas podem ser úteis ao
+entendimento.
+
+\textbf{Sentenças.} A linguagem é baseada em um conjunto enumerável de sentenças
+\textit{at\^omicas}: 
+\begin{equation}
+    \mathbb{P}_0, \mathbb{P}_1, \mathbb{P}_2, \ldots 
+\end{equation}
+Estas são as sentenças mais simples possívels.
+
+As \textit{sentenças moleculares} (não-at\^omicas) são formadas por meio das nove
+\textit{operações sintáticas}, ou \textit{operadores lógicos}:
+\begin{equation}
+   \top, \bot, \neg, \wedge, \vee, \rightarrow, \leftrightarrow, \Box, \Diamond
+\end{equation}
+
+Como mencionado na seção anterior, $\top$ e $\bot$ são operadores de aridade
+zero, ou constantes; $\neg$, $\Box$ e $\Diamond$ são operadores de aridade um; e
+$\wedge$, $\vee$, $\rightarrow$ e $\leftrightarrow$ são operadores de aridade
+dois.
+
+O conjunto de sentenças pode, então, ser definido formalmente como mostrado na
+Tabela~\ref{table:sentences}.
+
+\begin{center}
+    \begin{table}[h!]
+\label{table:sentences}
+    \caption{Truth conditions}
+
+    \begin{tabular}{ll}
+        \vspace{2mm}
+        (1) & a \\
+        \vspace{2mm}
+        (2)  & a \\
+        \vspace{2mm}
+        (3)  & a \\
+        \vspace{2mm}
+        (4)  &a \\
+        \vspace{2mm}
+        (5)  & a \\
+        \vspace{2mm}
+        (6)  &a \\
+        \vspace{2mm}
+        (7)  &a \\
+        \vspace{2mm}
+        (8)  &a \\
+        \vspace{2mm}
+        (9)  &a \\
+        \vspace{2mm}
+        (10) &a
+    \end{tabular}
+\end{table}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
