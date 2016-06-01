@@ -229,6 +229,23 @@ representam conjunções e disjunções arbitrárias mas não especificadas das
 sentenças $A_1,\ldots,A_n$. O objetivo é clarificar que tanto $\wedge$ como
 $\vee$ obedecem as regras de associatividade lógica. 
 
+\subsubsection{Fórmulas}
+Uma \textit{fórmula} é qualquer sequência finita de símbolos lógicos. 
+
+\begin{definition}[Fórmula bem-formada (FBF)]
+    A lingagem lógica proposicional, denotada por $L_p$, é equivalente ao seu
+    conjunto de fórmulas bem-formadas, denotado por $FBF_{L_P}$, que é definito
+    recursivamente como segue:
+    \begin{itemize}
+        \item se $p \in P$, então $p \in FBF_{L_P}$
+            \item se $\phi \in FBF_{L_P}$ e $\varphi \in FBF_{L_P}$, então: $\neg
+                \phi,\ (\wedge), (\vee), (\rightarrow), (\leftrightarrow) \in FBF_{L_P}$, 
+            
+    \end{itemize}
+\end{definition}
+
+\subsection{Semântica}
+
 \section{Modelos padrões para a lógica modal}
 \label{sec:modelos_padroes}
 
@@ -287,32 +304,59 @@ R da seguinte forma:
 \end{center}
 \end{figure}
 
-%\begin{tikzpicture}
+\subsection{Estrutura de Kripke}
 
-    %\def \n {5}
-    %\def \radius {3cm}
-    %\def \margin {8} % margin in angles, depends on the radius
-
-    %\foreach \s in {1,...,\n}
-    %{
-        %\node[draw, circle] at ({360/\n * (\s - 1)}:\radius) {$\s$};
-        %\draw[->, >=latex] ({360/\n * (\s - 1)+\margin}:\radius) 
-        %arc ({360/\n * (\s - 1)+\margin}:{360/\n *
-        %(\s)-\margin}:\radius);
-    %}
-%\end{tikzpicture}
-
+Uma das estruturas mais estudadas em lógica modal corresponde à estrutura de
+Kripke. Uma estrutura de Kripke para $P$ e $A_n = \{1, \ldots, n\}$ é dada da seguinte forma:
+\begin{equation}
+\mathbb{M} = <W,\ R_1, \ldots,\ R_n, \pi>
+\end{equation}
+onde:
+\begin{itemize}
+    \item $W$ é um conjunto não-vazio de possíveis mundos
+    \item para todo $a \in A_n, R_a \subseteq W \times W$
+    \item $\pi: W \times P \longrightarrow \{Falso, Verdadeiro\}$
+\end{itemize}
 
 
 
 
+\section{Resolução}
+\label{sec:resolucao}
+
+\subsection{Forma Normal Negada}
+\begin{definition}[Forma Normal Negada (FNN)]
+    Seja $\varphi \in FBF_{L_P}$, dizemos que $\varphi$ está na Forma Normal
+    Negada (FNN) se contém apenas os conectivos $\neg$, $\wedge$ e $\vee$ e o
+    conectivo de negação é aplicado apenas a símbolos proposicionais.
+\end{definition}
+
+A transformação em FNN é dada pelo seguinte procedimento:
+\begin{enumerate}
+    \item Substitua
+    \item Substitua
+    \item Aplique as leis de De Morgan
+    \item Elimine
+\end{enumerate}
+
+A simplificação de fórmulas aplica as seguintes regras de reescrita:
+\begin{itemize}
+    \item 
+\end{itemize}
+
+\subsection{Forma Normal Conjuntiva}
+\begin{definition}[Forma Normal Conjuntiva (FNC)]
+    Seja $\varphi \in FBF_{L_P}$, dizemos que $\varphi$ está na Forma Normal
+    Conjuntiva se é uma conjunção de cláusulas.
+\end{definition}
+
+A transformação de uma fórmula $\varphi$ em uma fórmula semanticamente
+equivalente, $\varphi '$, na FNC, é dada pelo seguinte procedimento:
 
 
+\subsection{Resolução Clausal}
+Resolução clausal é um procecimento refutacional: para podermos provar a
+sentença $\varphi$, nós transformamos a negação de $\varphi$ na Forma Normal
+Conjuntiva antes de aplicar a regra de inferência
 
-
-
-
-
-
-\section{Provas}
 
