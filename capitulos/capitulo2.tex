@@ -137,10 +137,10 @@ importar o mundo ou o modelo), e escrevemos $\models A$ quando $A$ é uma
 sentença válida.
 Mais formalmente, então, definimos a validade de uma sentença da seguinte forma:
 
-\begin{equation}
-    \models A\ se,\ e\ somente\ se,\ para\ todo\ modelo\ \mathcal{M}\ e\ para\ 
-    qualquer\ mundo\ \alpha\ em\ \mathcal{M},\ temos\ que\ \models ^{\mathcal{M}}_\alpha 
-\end{equation}
+%\begin{equation}
+    %\models A\ se,\ e\ somente\ se,\ para\ todo\ modelo\ \mathcal{M}\ e\ para\ 
+    %qualquer\ mundo\ \alpha\ em\ \mathcal{M},\ temos\ que\ \models ^{\mathcal{M}}_\alpha 
+%\end{equation}
 
 
 %% KEEP ON BABY
@@ -152,6 +152,35 @@ Mais formalmente, então, definimos a validade de uma sentença da seguinte form
 \caption{Exemplo lógica modal}
 \end{center}
 \end{figure}
+
+\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
+\tikzstyle{init} = [pin edge={to-,thin,black}]
+
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+    \node [int, pin={[init]above:$v_0$}] (a) {$\frac{1}{s}$};
+    \node (b) [left of=a,node distance=2cm, coordinate] {a};
+    \node [int, pin={[init]above:$p_0$}] (c) [right of=a]
+    {$\frac{1}{s}$};
+    \node [coordinate] (end) [right of=c, node distance=2cm]{};
+    \path[->] (b) edge node {$a$} (a);
+    \path[->] (a) edge node {$v$} (c);
+    \draw[->] (c) edge node {$p$} (end) ;
+\end{tikzpicture}
+\tikzstyle{newstyle}=[circle,draw=black,line width=2,minimum size=1cm]
+\tikzset{simple/.style={thick}}
+
+\begin{tikzpicture}[scale=2]
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=newstyle] (0) at (-2.75, 1) {};
+        \node[style=newstyle] (1) at (-2, 0.9) {};
+        \node[style=newstyle] (2) at (-1.25, 1) {};
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw (2,2) circle (1cm);
+\end{tikzpicture}
+
 
 %??
 \section{Preliminares lógicas}

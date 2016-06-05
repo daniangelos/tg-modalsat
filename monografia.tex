@@ -9,7 +9,7 @@
 \documentclass[bacharelado]{unb-cic}
 %\documentclass[licenciatura]{unb-cic}
 
-
+%\ifx\HCode\UnDef\else\hypersetup{tex4ht}\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Pacotes importados
@@ -24,6 +24,15 @@
 \usepackage{mathtools}
 \usepackage{mhchem}
 \usepackage{tikz}
+\usetikzlibrary{trees,er,matrix,mindmap,backgrounds}
+\usetikzlibrary{shadings,intersections,calc}
+\usetikzlibrary{shapes,arrows,patterns,snakes}
+\usepackage{pgfplots}
+\usepackage{pgfkeys}
+\usepgfplotslibrary{units}
+\pgfdeclarelayer{nodelayer}
+\pgfdeclarelayer{edgelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
 %%%<
 \usepackage{verbatim}
 %%%>
@@ -32,9 +41,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 
-
-
-
+\usetikzlibrary{arrows}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Cores dos links
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,6 +58,7 @@
   urlcolor= DarkScarletRed
 }
 
+\input{symbols}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
