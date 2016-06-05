@@ -1,34 +1,37 @@
 \chapter{Revisão Teórica}
 \section{Introdução a Lógica Modal}
 \label{sec:l_gica_modal}
-Neste capítulo, introduziremos a lógica modal através do sistema $S5$. Este
-sistema, apesar de ser um dos mais simples possíveis, possui algumas das
-principais características do sistema de lógica modal, e essas serão ilustradas
-a partir dele. 
+Neste capítulo, introduziremos brevemente a base do pensamento modal. 
 
-O sistema $S5$ é determinado semanticamente por uma avaliação de necessidade e
-possibilidade.
-Isto é, em resumo %forçado
-, a base da estrutura do pensamento modal que data desde o filósofo Leibniz: uma
-proposição é \textit{necessária} se ocorre em todos os possíveis mundos 
-e \textit{possível} se ocorre em algum mundo~\cite{chellas:modal_logic}.
-A ideia é que coisas %revise
-diferentes podem ser verdadeiras em mundos diferentes, mas qualquer que ocorra
-em todos os possíveis mundos é necessário, enquanto o que ocorre em pelo menos
-um mundo é possível.
+A lógica modal é determinada semanticamente por uma avaliação de necessidade e
+possibilidade --- na literatura, encontramos representações análogas, como por
+exemplo, de conhecimento e crença, respectivamente~\cite{artigoquefaladeknowledgeebelief} --- isto é, em resumo %forçado
+, a base da estrutura
+modal que data desde discursos do filósofo Leibniz: uma proposição é
+\textit{necessária} se ocorre em todos os possíveis mundos e \textit{possível}
+se ocorre em algum mundo~\cite{chellas:modal_logic}.  A ideia é que
+%revise 
+diferentes ações ou objetos podem ser verdadeiros em mundos diferentes, mas
+qualquer coisa que
+ocorra em todos os possíveis mundos é necessário, enquanto o que ocorre em pelo
+menos um mundo, é possível.
 
 %As proposições são da forma $\Box A$
 %$\Diamond A$
 
+Os operadores utilizados são os mesmos já conhecidos da lógica proposicional
+($\wedge$, $\vee$, $\rightarrow$ etc) com a inclusão de dois novos: $\Box$ e
+$\Diamond$.
 Uma sentença da forma $\Box A$ --- \textit{necessariamente} $A$ --- é verdadeira se,
 e somente se, $A$ é uma proposição verdadeira em todos os possíveis mundos; já
 uma sentença da forma $\Diamond A$ --- \textit{possivelmente} $A$ --- é verdadeira
 no caso em que $A$ é uma proposição verdadeira em algum possível mundo.
 
-Uma ilustração válida é uma coleção de possíveis mundos, incluindo nosso
-próprio, o mundo real, onde sentenças da linguagem são possivelmente verdadeiras
-ou falsas. O propósito principal da lógica modal é modelar isto, e isto é feito
-listando uma sequência possivelmente infinita de conjuntos de possíveis mundos,
+Uma ilustração válida para a lógica modal, é pensar em uma coleção de possíveis
+mundos, incluindo nosso próprio, o mundo real, onde sentenças da linguagem são
+possivelmente verdadeiras ou falsas. O propósito principal da lógica modal é
+modelar a ocorrência verdadeira destas sentenças, e isto é feito listando uma
+sequência, podendo ser esta lista infinita, de conjuntos destes possíveis mundos,
 \begin{equation}
     P_0,\ P_1,\ P_2,\ldots
 \end{equation}
@@ -37,13 +40,20 @@ A intuição por trás deste modelo é que, para cada número natural $n$, o con
 $P_n$ contém somente os possíveis mundos onde a sentença $\mathbb{P}_n$ é
 verdadeira. Em outras palavras, a sequência 
 $P_0,\ P_1,\ P_2,\ldots$
-ilustra as sentenças at\^omicas estipulando em quais possíveis mundos elas
-ocorrem, e.g onde são verdadeiras,
-(e, por omissão, em quais mundos elas são falsas):
+representa as sentenças at\^omicas estipulando em quais possíveis mundos elas
+ocorrem, ou seja, onde são verdadeiras,
+(e, por omissão, em quais mundos elas são falsas) da seguinte maneira:
 \begin{equation}
-    \mathbb{P}_n\ is\ true\ at\ a\ possible\ world\ \alpha\ if\ and\ only\ if\
+    \mathbb{P}_n\ e\ verdadeiro\ em\ um\ possivel\ mundo\ \alpha\ se\ e\
+    somente\ se\
     \alpha \in P_n 
 \end{equation}
+
+A lógica modal pode ser expressa de diferentes formas e contar com diferentes
+axiomas através da ideia de sistemas, isto será explorado com mais detalhes 
+na seção~\ref{sec:sistemas}. Um dos sistemas mais simples conhecidos é o $S5$, e
+este será utilizado para introdução, e, posteriormente, sua estrutura será
+expandido para uma forma mais geral.
 
 Um modelo no sistema $S5$ é, portanto, uma tupla:
 <$W$,~$P$>
@@ -63,14 +73,14 @@ Usamos a notação:
 \end{equation}
 onde $A$ é uma sentença e $\alpha$ é um possível mundo em um modelo
 $\mathcal{M}=<W,P>$.
-A lei~\ref{modal:truth} é um resumo para: $A\ is\ true\ at\ \alpha\ in\
-\mathcal{M}$.
+A lei~\ref{modal:truth} é um resumo para: $A\ é\ verdadeiro\ em\ \alpha\ no
+modelo\ \mathcal{M}$.
 
-As condições de verdade estão expressadas na Tabela~\ref{table:truth}.
+As condições de verdade estão expressas na Tabela~\ref{table:truth}.
 
 \begin{center}
     \begin{table}[h!]
-\label{table:truth}
+\label{table:truth3}
     \caption{Truth conditions}
 
     \begin{tabular}{ll}
@@ -130,56 +140,83 @@ Alguns esclarecimentos sobre essas definições podem ser úteis:
     \item Finalmente, de acordo com a cláusula (10), $\Diamond A$
 \end{itemize}
 
-Uma sentença verdadeira em cada mundo possível de todo modelo é chamada
-\textit{válida}. Usamos o símbolo $\models$ novamente, mas desta vez sem as
-marcações superior e inferior (para enfatizar que a sentença é válida, sem
-importar o mundo ou o modelo), e escrevemos $\models A$ quando $A$ é uma
-sentença válida.
-Mais formalmente, então, definimos a validade de uma sentença da seguinte forma:
+Observe que as constantes $\top$ e $\bot$ são, na realidade, operadores de
+aridade zero. Abstrações necessárias para algumas simplificações que veremos
+mais a frente.
 
-%\begin{equation}
-    %\models A\ se,\ e\ somente\ se,\ para\ todo\ modelo\ \mathcal{M}\ e\ para\ 
-    %qualquer\ mundo\ \alpha\ em\ \mathcal{M},\ temos\ que\ \models ^{\mathcal{M}}_\alpha 
-%\end{equation}
+Na Figura~\ref{figure:mundos_simples} está ilustrado um exemplo de modelo para a
+lógica modal. No exemplo, o modelo $\mathcal{M}$ possui três mundos, $\alpha$,
+$\beta$ e $\omega$. Os conjuntos de mundos onde as sentenças at\^omicas são
+verdadeiras será expressado da seguinte forma:
 
+\begin{align}
+    P_0 &= \{\alpha, \beta, \omega\} \\
+    P_1 &= \{\alpha, \beta\}\\
+    P_2 &= \{\alpha, \omega\}\\
+    P_n &= \emptyset, \forall n > 2
+\end{align}
 
-%% KEEP ON BABY
+Podemos, portanto expressar as seguintes sentenças para o modelo $\mathcal{M}$,
+sendo todas verdadeiras:
+
+\begin{align}
+    P_n &= \emptyset, \forall n > 2
+\end{align}
+
+Observe que não é verdade que $\Box \mathbb{P}_1$, pois $\mathbb{P}_1$ não é
+ocorre em $\omega$, ou seja, não satisfaz a condição de ocorrer em todos os
+possíveis mundos.
 
 \begin{figure}
-\label{figure:mundos_simples}
 \begin{center}
-\includegraphics[scale=0.8]{imagens/ex_modal_simples.png}
+\label{figure:mundos_simples}
+\begin{tikzpicture}[scale=2]
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
+        \node[style=newstyle] (1) at (-2, 0.9) {};
+        \node[style=newstyle] (2) at (-0.25, 1) {};
+        \node[style=rect] (3) at (-2, 1) {M};
+    \end{pgfonlayer}
+\end{tikzpicture}
 \caption{Exemplo lógica modal}
 \end{center}
 \end{figure}
 
-\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
-\tikzstyle{init} = [pin edge={to-,thin,black}]
+Uma sentença verdadeira em cada possível mundo em qualquer modelo é chamada
+\textit{sentença válida}. Usamos o símbolo $\models$ novamente, mas desta vez sem as
+marcações superior e inferior (para enfatizar que a sentença é verdadeira, sem
+importar o mundo ou o modelo), e escrevemos $\models A$ quando $A$ é uma
+sentença válida.
+Mais formalmente, então, definimos a validade de uma sentença da seguinte forma:
 
-\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
-    \node [int, pin={[init]above:$v_0$}] (a) {$\frac{1}{s}$};
-    \node (b) [left of=a,node distance=2cm, coordinate] {a};
-    \node [int, pin={[init]above:$p_0$}] (c) [right of=a]
-    {$\frac{1}{s}$};
-    \node [coordinate] (end) [right of=c, node distance=2cm]{};
-    \path[->] (b) edge node {$a$} (a);
-    \path[->] (a) edge node {$v$} (c);
-    \draw[->] (c) edge node {$p$} (end) ;
-\end{tikzpicture}
-\tikzstyle{newstyle}=[circle,draw=black,line width=2,minimum size=1cm]
-\tikzset{simple/.style={thick}}
+\begin{equation}
+    \models A\ se,\ e\ somente\ se,\ para\ todo\ modelo\ \mathcal{M}\ e\ para\ 
+    qualquer\ mundo\ \alpha\ em\ \mathcal{M},\ temos\ que\ \models ^{\mathcal{M}}_\alpha 
+\end{equation}
 
-\begin{tikzpicture}[scale=2]
-    \begin{pgfonlayer}{nodelayer}
-        \node [style=newstyle] (0) at (-2.75, 1) {};
-        \node[style=newstyle] (1) at (-2, 0.9) {};
-        \node[style=newstyle] (2) at (-1.25, 1) {};
-    \end{pgfonlayer}
-\end{tikzpicture}
+No estudo da lógica da necessidade e possibilidade, queremos saber quais são as
+sentenças válidas --- verdadeiras, sem se importar com interpretações, em
+qualquer mundo possível --- e quais não são. Por exemplo, podemos demonstrar que
+toda sentença da forma $\Box A \rightarrow A$ é válida, enquanto que nem toda
+sentença da forma $A \rightarrow \Box A$ o é.
 
-\begin{tikzpicture}
-\draw (2,2) circle (1cm);
-\end{tikzpicture}
+
+%% KEEP ON BABY
+
+%\includegraphics[scale=0.8]{imagens/ex_modal_simples.png}
+
+%\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+    %\node [int, pin={[init]above:$v_0$}] (a) {$\frac{1}{s}$};
+    %\node (b) [left of=a,node distance=2cm, coordinate] {a};
+    %\node [int, pin={[init]above:$p_0$}] (c) [right of=a]
+    %{$\frac{1}{s}$};
+    %\node [coordinate] (end) [right of=c, node distance=2cm]{};
+    %\path[->] (b) edge node {$a$} (a);
+    %\path[->] (a) edge node {$v$} (c);
+    %\draw[->] (c) edge node {$p$} (end) ;
+%\end{tikzpicture}
+%\tikzset{simple/.style={thick}}
+
 
 
 %??
@@ -190,7 +227,8 @@ Esta seção é dedicada a trazer o básico dos conceitos de sintaxe da linguage
 lógica modal. As definições formais apresentadas podem ser úteis ao
 entendimento.
 
-\textbf{Sentenças.} A linguagem é baseada em um conjunto enumerável de sentenças
+\subsubsection{Sentenças} 
+A linguagem é baseada em um conjunto enumerável de sentenças
 \textit{at\^omicas}: 
 \begin{equation}
     \mathbb{P}_0, \mathbb{P}_1, \mathbb{P}_2, \ldots 
@@ -251,15 +289,21 @@ operações são todas \textit{um-pra-um}, ou seja, duas condicionais são, por
 exemplo, iguais se, e somente se, ambos antecedentes e consequentes o são.
 Também é válido lembrar que o conjunto de sentenças é enumerável.
 
-\textbf{Convenções.} É importante definir algumas convenções para minimizar 
+\subsubsection{Convenções} 
+É importante definir algumas convenções para minimizar 
 dúvidas que poderiam surgir em algumas expressões.
 Expressões da forma $A_1 \wedge \ldots \wedge A_n$ e $A_1 \vee \ldots \vee A_n$
 representam conjunções e disjunções arbitrárias mas não especificadas das
-sentenças $A_1,\ldots,A_n$. O objetivo é clarificar que tanto $\wedge$ como
+sentenças $A_1,\ldots,A_n$. O objetivo é deixar claro que tanto $\wedge$ como
 $\vee$ obedecem as regras de associatividade lógica. 
 
 \subsubsection{Fórmulas}
-Uma \textit{fórmula} é qualquer sequência finita de símbolos lógicos. 
+Agora que expressamos claramente a sintaxe que será utilizada na escrita de
+sentenças e provas, podemos definir alguns conceitos que serão importantes mais
+a frente.
+
+A definição de \textit{fórmula} segue diretamente da sintaxe, e dizemos que é
+qualquer sequência finita de símbolos lógicos. 
 
 \begin{definition}[Fórmula bem-formada (FBF)]
     A lingagem lógica proposicional, denotada por $L_p$, é equivalente ao seu
@@ -272,6 +316,40 @@ Uma \textit{fórmula} é qualquer sequência finita de símbolos lógicos.
             
     \end{itemize}
 \end{definition}
+
+\begin{definition}[Forma Normal Negada (FNN)] Seja $\varphi \in FBF_{L_P}$, dizemos que $\varphi$ está na Forma Normal Negada (FNN) se contém apenas os conectivos $\neg$, $\wedge$ e $\vee$ e o
+    conectivo de negação é aplicado apenas a símbolos proposicionais.
+\end{definition}
+
+A transformação em FNN é dada pelo seguinte procedimento:
+\begin{enumerate}
+    \item Substitua
+    \item Substitua
+    \item Aplique as leis de De Morgan
+    \item Elimine
+\end{enumerate}
+
+A simplificação de fórmulas aplica as seguintes regras de reescrita:
+\begin{itemize}
+    \item 
+\end{itemize}
+
+\begin{definition}[Forma Normal Conjuntiva (FNC)]
+    Seja $\varphi \in FBF_{L_P}$, dizemos que $\varphi$ está na Forma Normal
+    Conjuntiva se é uma conjunção de cláusulas.
+\end{definition}
+
+A transformação de uma fórmula $\varphi$ em uma fórmula semanticamente
+equivalente, $\varphi '$, na FNC, é dada pelo seguinte procedimento:
+
+\begin{definition}[Forma Normal Disjuntiva (FND)]
+    Seja $\varphi \in FBF_{L_P}$, dizemos que $\varphi$ está na Forma Normal
+    Disjuntiva se é uma disjunção de conjunções de literais.
+\end{definition}
+
+A transformação de uma fórmula $\varphi$ em uma fórmula semanticamente
+equivalente, $\varphi '$, na FND, é dada pelo seguinte procedimento:
+
 
 \subsection{Semântica}
 
@@ -310,7 +388,7 @@ sentenças modais sofre uma pequena alteração, levando em conta agora, a rela�
 R da seguinte forma:
 
     \begin{table}[h!]
-\label{table:truth}
+\label{table:truth2}
 \begin{center}
     \caption{Condições de verdade: sentenças modais}
     \begin{tabular}{ll}
@@ -325,13 +403,126 @@ R da seguinte forma:
 \end{center}
 \end{table}
 
-\begin{figure}
-\label{figure:mundos_relacao}
-\begin{center}
-\includegraphics[scale=0.8]{imagens/ex_modal_relacao.png}
-\caption{Exemplo lógica modal}
-\end{center}
-\end{figure}
+\subsection{Sistemas de lógica modal}
+\label{sec:sistemas}
+
+\subsubsection{Sistema $S5$}
+
+Nesta seção vamos examinar a necessidade e a possibilidade em $S5$ de um ponto
+de vista axiomático. Começamos com uma axiomatização baseada nos princípios das
+seções anteriores, ou seja, adotaremos como axiomas, ou teoremas básicos,
+quaisquer sentenças das seguintes formas:
+
+\begin{align}
+    T.& \\
+    5.& \\
+    K.& \\
+    Df\Diamond.& \\
+    PL.& 
+\end{align}
+
+E assumimos as seguintes regras de inferência:
+
+\begin{mathpar}
+\label{natrules1}
+(RN)~\inferrule{A}{\Box~A} 
+\end{mathpar}
+
+\begin{mathpar}
+\label{natrules1}
+(MP)~\inferrule{A \rightarrow~B, A}{B} 
+\end{mathpar}
+
+Por teorema, geralmente, queremos dizer qualquer sentença que possa ser provada
+com base nos axiomas e nas regras de inferência e denotamos como $\vdash A$ para
+dizer que a sentença $A$ é também um teorema.
+
+Podemos observar que $S5$, aqui formulado como um sistema dedutivo, inclui a
+lógica proposicional, ou seja, a seguinte regra de inferência pode ser derivada
+de dentro do sistema:
+
+\begin{mathpar}
+\label{natrules1}
+(RPL)~\inferrule{A_1, \ldots, A_n}{A}~(n \geq~0) 
+\end{mathpar}
+
+Para provarmos tal regra, mostramos que se a inferência de $A_1, \ldots, A_n$
+para $A$ é proposicionalmente correta, e cada um dos $A_1, \ldots, A_n$ é um
+teorema, então $A$ também é um teorema. A suposição de que a inferência é
+proposicionalmente correta implica que $A$ é verdadeiro em qualquer validação
+onde cada um dos $A_1, \ldots, A_n$ é verdadeiro, o que basicamente expressa que
+a sentença
+\begin{equation}
+    A_1 \rightarrow (\ldots(A_n \rightarrow A) \ldots)
+\end{equation}
+é uma tautologia (PL), ou seja, um teorema. Aplicamos a regra (MP) $n$ vezes, e
+concluímos que $A$ também é um teorema.
+
+Utilizamos o sistema $S5$ para ilustrar alguns conceitos iniciais de prova e
+regras de inferência. A seguir, iremos mostrar como aplicá-los a sistemas mais
+complexos da lógica modal.
+
+\subsubsection{Outros sistemas}
+\label{ssub:Outrossistemas}
+Definimos sistemas de lógica modal em termos do fecho sobre a regra de
+inferência (RPL), onde $A$ é uma consequência tautológica das sentenças $A_1,
+\ldots, A_n$.
+
+\begin{definition}[Sistema de lógica modal]
+   Um conjunto de sentenças é um \textit{sistema de lógica modal} se, e somente
+   se, é fechado sobre (RPL).
+\end{definition}
+
+Assim, um sistema de lógica modal é qualquer conjunto de sentenças fechado com
+respeito a todos os modos proposicionalmente corretos de inferência.
+Reservaremos a notação $\Sigma$ como uma variável para conjuntos de sequências
+que são sistemas de lógica modal, e, para simplicidade, constantemente iremos
+nos referir aos mesmos simplesmente como sistemas.
+
+Os teoremas em um sistema são simplesmente as sentenças que o mesmo contém.
+Escrevemos $\vdash_{\Sigma} A$ quando $A$ é um teorema de $\Sigma$.
+
+\begin{definition}[Teorema em sistemas modais]
+    $\vdash_{\Sigma} A$ se, e somente se $A \in \Sigma$.
+\end{definition}
+
+Como sistemas são simplesmente conjuntos de sentenças, a força de um sistema é medido em
+termos de inclusão: um sistema é pelo menos tão forte quanto um sistema $\Sigma$
+--- e denotaremos como um $\Sigma$-sistema --- somente no cso em que contém todo
+e qualquer teorema de $\Sigma$ (note que esta relação é reflexiva).
+
+\begin{theorem}
+    O conjunto de tautologias é definido a partir do axioma PL, definido na
+    seção anterior.\\
+    (1) PL é um sistema de lógica modal. \\
+    (2) Todo sistema de lógica modal é um PL-sistema. \\
+    (3) PL é o menor sistema de lógica modal.
+\end{theorem}
+
+Podemos definir noções de \textit{dedutibilidade} e \textit{consistência}, em
+termos de teoremicidade. 
+
+Uma sentença $A$ é dedutível de um conjunto de
+sentenças $\Gamma$ e um sistema $\Sigma$ --- e escrevemos $\Gamma
+\vdash_{\Sigma} A$ --- se, e somente se, $\Sigma$ contém um teorema da forma:
+\begin{equation}
+    (A_1 \wedge \ldots \wedge A_n) \rightarrow A
+\end{equation}
+onde cada $A_i~(i=1,\ldots,n)$ dos antecedentes é uma sentença em $\Gamma$.
+
+Um conjunto de sentenças $\Gamma$ é consistente em $\Sigma$ --- e escrevemos
+$Con_{\Sigma}\Gamma$ --- somente no caso em que a sentença $\bot$ não é
+$\Sigma$-dedutível a partir de $\Gamma$.
+
+Mais formalmente:
+
+\begin{definition}[Dedutibilidade]
+    
+\end{definition}
+
+\begin{definition}[Consistência]
+    
+\end{definition}
 
 \subsection{Lógica Multimodal}
 \label{sub:lógica_multimodal}
@@ -352,43 +543,61 @@ onde:
 \end{itemize}
 
 
+\begin{figure}
+\begin{center}
+\label{figure:mundos_relacao}
+\begin{tikzpicture}[scale=2]
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
+        \node[style=newstyle] (1) at (-2, 0.9) {};
+        \node[style=newstyle] (2) at (-0.25, 1) {};
+        \node[style=rect] (3) at (-2, 1) {M};
+    \end{pgfonlayer}
+\end{tikzpicture}
+\caption{Exemplo estrutura de Kripke}
+\end{center}
+\end{figure}
+
 
 
 \section{Resolução}
 \label{sec:resolucao}
+Informalmente, uma prova é um argumento que convence. Formalmente, uma prova é
+uma fórmula, é um objeto finito construído de acordo com regras de sintaxe
+fixadas que fazem referência unicamente à estrutura das fómulas e não ao seu
+significado pretendido. As regras sintáticas que definem as provas especificam o
+que chamamos de \textit{procedimento de prova}.
+Um procedimento de prova é \textit{sólido} para uma lógica em particular se
+para qualquer fórmula que possuir uma prova, esta fórmula se trata de uma
+fórmula válida nesta lógica. Um procedimento de prova é \textit{completo} para
+uma lógica se toda fórmula válida daquela lógica possui uma prova. Dessa forma,
+um procesimento sólido e completo de provas nos permite constuir
+``testemunhas'', chamadas de provas, de que determinada fórmula é válida.
 
-\subsection{Forma Normal Negada}
-\begin{definition}[Forma Normal Negada (FNN)]
-    Seja $\varphi \in FBF_{L_P}$, dizemos que $\varphi$ está na Forma Normal
-    Negada (FNN) se contém apenas os conectivos $\neg$, $\wedge$ e $\vee$ e o
-    conectivo de negação é aplicado apenas a símbolos proposicionais.
-\end{definition}
+Existem inúmeros tipos de procedimentos de provas. Genericamente, podemos
+dividi-los em duas categorias: \textit{sintéticos} e \textit{analíticos}. Os
+termos são sugestivos, mas não extremamente precisos. Uma procedimento de prova
+analítico decompõe uma fórmula em partes mais simples. Um procedimento de prova
+sintético, por outro lado, constrói uma prova até a fórmula que se deseja obter a
+demonstração.
+O primeiro tende a ser mais facilmente aplicado, já que o espaço em que se
+trabalha é limitado: nunca olha-se para muito longe do escopo onde se encontra a
+fórmula que se está tentando prova. Já o segundo costuma ser mais utilizado por
+produzir provas especialmente elegantes.
 
-A transformação em FNN é dada pelo seguinte procedimento:
-\begin{enumerate}
-    \item Substitua
-    \item Substitua
-    \item Aplique as leis de De Morgan
-    \item Elimine
-\end{enumerate}
+O exemplo mais comum de procedimento sintético é um \textit{sistema de axiomas}.
+Algumas fórmulas são tomadas como axiomas, uma prova começa com esses axiomas e,
+usando regras de inferência definidas, que produzem novas fórmulas, é construído
+uma sequência de fórmulas que finalmente termina na fórmula que se está tentando
+provar.
 
-A simplificação de fórmulas aplica as seguintes regras de reescrita:
-\begin{itemize}
-    \item 
-\end{itemize}
-
-\subsection{Forma Normal Conjuntiva}
-\begin{definition}[Forma Normal Conjuntiva (FNC)]
-    Seja $\varphi \in FBF_{L_P}$, dizemos que $\varphi$ está na Forma Normal
-    Conjuntiva se é uma conjunção de cláusulas.
-\end{definition}
-
-A transformação de uma fórmula $\varphi$ em uma fórmula semanticamente
-equivalente, $\varphi '$, na FNC, é dada pelo seguinte procedimento:
-
-%\subsection{Provas}
-%\label{sub:provas}
-
+\textit{Sistemas Tableaux} são um dos mais comuns procedimentos de prova
+analítica. Para provar uma fórmula, precisamos inicialmente negá-la, analisando
+as consequências de ser tomada tal ação, utilizando uma estrutura em forma de
+árvore. Este tipo de sistema é conhecido como \textit{sistemas de refutação}.
+Se, as consequências resultarem em algo impossível, pode-se concluir que a
+fórmula original está provada. Falaremos mais sobre este sistema na
+Seção~\ref{sub:tableaux}.
 
 
 \subsection{Resolução Clausal}
@@ -404,6 +613,133 @@ com sucesso, em lógica modal para prover decisões de procedimento.
 O tableaux consiste em uma prova representada graficamente na forma de árvore. É
 um método analítico baseado na prova por contradição.
 
+\begin{figure}
+\begin{center}
+\label{figure:tree_tableaux}
+\begin{tikzpicture}[scale=2]
+    \begin{pgfonlayer}{nodelayer}
+        \node[style=quarequare] (0) at  (0, 2) {A};
+        \node[style=quarequare] (1) at  (-1, 1) {B};
+        \node[style=quarequare] (2) at  (1, 1)  {C};
+        \node[style=quarequare] (3) at  (-1, -0)  {D};
+        \node[style=quarequare] (4) at  (-1, -1)  {E};
+        \node[style=quarequare] (5) at  (-1.5, -2) {F};
+        \node[style=quarequare] (6) at  (-0.5, -2) {G};
+        \node[style=quarequare] (7) at  (0.5, -0) {H};
+        \node[style=quarequare] (8) at  (1.5, -0) {I};
+        \node[style=quarequare] (9) at  (1.5, -1) {J};
+        \path[->] (0) edge node {} (2)
+        (0) edge node {} (1)
+        (1) edge node {} (3)
+        (3) edge node {} (4)
+        (4) edge node {} (5)
+        (4) edge node {} (6)
+        (2) edge node {} (7)
+        (2) edge node {} (8)
+        (8) edge node {} (9);
+    \end{pgfonlayer}
+\end{tikzpicture}
+\caption{Exemplo lógica modal}
+\end{center}
+\end{figure}
+
+Na Figura~\ref{figura:tree_tableaux}, os quadrados são chamados \textit{nós},
+que, no \textit{tableaux}, representam as fórmulas pré-fixadas, definidas a
+seguir. O nó \texttt{A} é o nó \textit{raiz} e os nós \texttt{F, F, H} e
+\texttt{J} são o que chamamos de \textit{folhas}. O nó \texttt{A} possui dois
+\textit{filhos}, \texttt{B} e \texttt{C}, com \texttt{B} sendo o filho da
+esquerda e \texttt{C} o filho da direita. Se um nó é filho de outro nó, o
+segundo é chamado \textit{pai} do primeiro --- por exemplo, \texttt{C} é o pai
+de \texttt{H} e de \texttt{I}.
+A sequência A, B, D, E é um exemplo de \textit{caminho}. Outro exemplo de
+caminho é a sequência A, B, D, E, F, que também chamado de \textit{ramo}, que
+corresponde a um caminho máximo.
+
+\begin{definition}[Prefixo]
+   Um prefixo é uma sequência finita de inteiros positivos. Uma \textit{fórmula
+   prefixada} é uma expressão da forma $\sigma X$, onde $\sigma$ é um prefixo e
+   $X$ é uma fórmula.
+\end{definition}
+
+Escrevemos prefixos usando pontos para separar os inteiros, por exemplo:
+1.2.3.2.1.
+Também, se $\sigma$ é um prefixo e $n$ é um inteiro positivo, $\sigma.n$ é um
+prefixo.
+
+A ideia intuitiva é que um prefixo $\sigma$ nomeia um possível mundo em algum
+modelo, e $\sigma X$ nos diz que $X$ é verdadeiro no mundo que $\sigma$
+representa. Nossa intenção é que $\sigma.n$ deve sempre representar um mundo que
+é acessível daquele que $\sigma$ representa. Outros fatos sobre os prefixos
+dependem em qual lógica modal se está considerando. Estes serão abordados mais a
+frente.
+
+Uma tentativa de construção de prova por tableaux para uma fórmula $Z$ começa
+inicializando a árvore de prova com $1 \neg Z$ como raiz, ou seja, afirmamos que
+$Z$ não ocorre (não é verdadeiro) em um possível modelo no mundo representado
+por $1$. Em seguida, ramos são construídos de acordo com certas \textit{Regras
+de Extensão}, definidas em breve. Finalmente, é necessário que cada ramo esteja
+\textit{fechado}, definição que será dada após as regras de construção dos
+ramos.
+
+\begin{definition}[Regras Conjuntivas]
+    Para qualquer prefixo $\sigma$:
+    \begin{mathpar}
+\label{conj_rules}
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+    \end{mathpar}
+\end{definition}
+
+\begin{definition}[Regras Disjuntivas]
+    Para qualquer prefixo $\sigma$:
+    \begin{mathpar}
+\label{disj_rules}
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+    \end{mathpar}
+\end{definition}
+
+\begin{definition}[Regra da Dupla Negação]
+    Para qualquer prefixo $\sigma$:
+    \begin{mathpar}
+\label{doublenegation}
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+    \end{mathpar}
+\end{definition}
+
+\begin{definition}[Regras de Possibilidade]
+    Para qualquer prefixo $\sigma$:
+    \begin{mathpar}
+\label{doublenegation}
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+    \end{mathpar}
+\end{definition}
+
+\begin{definition}[Regras de Necessidade Básicas]
+    Para qualquer prefixo $\sigma$:
+    \begin{mathpar}
+\label{doublenegation}
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+    \end{mathpar}
+\end{definition}
+
+\begin{definition}[Fecho]
+    Um ramo do tableaux é dito \textit{fechado} se contém ambos $\sigma X$ e
+    $\sigma \neg X$ para alguma fórmula $X$. Um ramo que não está fechado, é
+    dito \textit{aberto}. Um tableaux é dito fechado se todos os seus ramos
+    estão fechados.
+\end{definition}
+
+\begin{definition}[Prova por Tableaux]
+    Um tableaux fechado para $1 \neg Z$ é uma \textit{prova por tableaux} de
+    $Z$, e $Z$ é um \textit{teorema} se possui uma prova por tableaux.
+\end{definition}
 
 \subsection{Tableaux Clausal}
 

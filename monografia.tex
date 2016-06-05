@@ -18,6 +18,7 @@
 \usepackage[brazil,american]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{indentfirst}
+\usepackage{listings}
 \usepackage{natbib}
 \usepackage{xcolor,graphicx,url}
 \usepackage[utf8]{inputenc}
@@ -40,8 +41,14 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{mathpartir}
 
-\usetikzlibrary{arrows}
+\tikzstyle{newstyle}=[circle,draw=black,line width=2,minimum size=2.5cm]
+\tikzstyle{quarequare}=[rectangle,draw=black,line width=2,minimum size=1cm]
+\tikzstyle{rect}=[rectangle,draw=black,line width=1,minimum width=10cm,minimum
+height=4cm]
+\tikzstyle{int}=[draw, fill=blue!20, minimum size=2em]
+\tikzstyle{init} = [pin edge={to-,thin,black}]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Cores dos links
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,7 +65,20 @@
   urlcolor= DarkScarletRed
 }
 
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
 \input{symbols}
+\lstset{language=C,
+    basicstyle=\ttfamily,
+    numbers=left,      
+    keywordstyle=\color{blue}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    commentstyle=\color{mygray}\ttfamily,
+    showstringspaces=false,
+    morecomment=[l][\color{mymauve}]{\#}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
