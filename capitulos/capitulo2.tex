@@ -403,6 +403,23 @@ R da seguinte forma:
 \end{center}
 \end{table}
 
+\begin{figure}
+\begin{center}
+\label{figure:mundos_relacao}
+\begin{tikzpicture}[scale=2]
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
+        \node[style=newstyle] (1) at (-2, 1.4) {};
+        \node[style=newstyle] (2) at (-0.25, 1) {};
+        \node[style=newstyle] (4) at (-2, 0) {};
+        \node[style=rect2] (3) at (-2, 0.7) {M};
+    \end{pgfonlayer}
+\end{tikzpicture}
+\caption{Exemplo de modelo com relação}
+\end{center}
+\end{figure}
+
+
 \subsection{Sistemas de lógica modal}
 \label{sec:sistemas}
 
@@ -657,23 +674,24 @@ onde:
     \item $\pi: W \times P \longrightarrow \{Falso, Verdadeiro\}$
 \end{itemize}
 
-
 \begin{figure}
-\begin{center}
-\label{figure:mundos_relacao}
-\begin{tikzpicture}[scale=2]
-    \begin{pgfonlayer}{nodelayer}
-        \node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
-        \node[style=newstyle] (1) at (-2, 1.4) {};
-        \node[style=newstyle] (2) at (-0.25, 1) {};
-        \node[style=newstyle] (4) at (-2, 0) {};
-        \node[style=rect2] (3) at (-2, 0.7) {M};
-    \end{pgfonlayer}
-\end{tikzpicture}
-\caption{Exemplo estrutura de Kripke}
-\end{center}
+\label{fig:kripke}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{pgfonlayer}{nodelayer}
+                \node [style=bolinha] (0) at (0, 2) {};
+                \node [style=bolinha] (1) at (-2, -1) {};
+                \node [style=bolinha] (2) at (2, -1) {};
+                \path[->] (0) edge node {} (0)
+                (1) edge node {} (1)
+                (2) edge node {} (2);
+                \path[<->] (0) edge node {} (1)
+                (0) edge node {} (2);
+            \end{pgfonlayer}
+        \end{tikzpicture}
+    \end{center}
+    \caption{Estrutura de Kripke}
 \end{figure}
-
 
 
 \section{Resolução}
@@ -928,7 +946,41 @@ ramos.
         \end{tabular}
     \end{center}
 \end{table}
+
+\begin{definition}[Regras de suposição]
+    Seja $L$ um dos sistemas modais para os quais a regras do tableaux estão
+    definidas. Seja também $S$ e $U$ conjuntos de fórmulas. Um tableaux usa $S$
+    como suposições globais e $U$ como suposições locais se as duas seguintes
+    regras de tableaux adicionais são admitidas:
+
+    \textit{Suposição Local:} Se $Y$ é qualquer elemento de $U$ então $1\ Y$ pode
+    ser adicionado ao final de qualquer ramo em aberto.
+
+    \textit{Suposição Global:} Se $Y$ é qualquer elemento de $S$ então $\sigma Y$
+    pode ser adicionado ao final de qualquer ramo em aberto no qual $\sigma$ já
+    aparece como prefixo.
+\end{definition}
+
+
+\begin{figure}
+    \label{fig:example2}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{pgfonlayer}{nodelayer}
+                \node  (0) at (0, 2) {P};
+                \node  (1) at (0, 1) {P};
+                \node  (5) at (0, -0) {P};
+                \node  (6) at (0, -1) {P};
+                \node  (7) at (0, -2) {P};
+                \node  (2) at (0, -3) {P};
+                \node  (3) at (-4, -4) {P};
+                \node  (4) at (4, -4) {P};
+                \path[-] (2) edge node {} (3)
+                         (2) edge node {} (4);
+            \end{pgfonlayer}
+        \end{tikzpicture}
+    \end{center}
+    \caption{Exemplo de prova por tableaux}
+\end{figure}
+
 \subsection{Tableaux Clausal}
-
-
-
