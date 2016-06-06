@@ -464,6 +464,12 @@ complexos da lógica modal.
 
 \subsubsection{Outros sistemas}
 \label{ssub:Outrossistemas}
+
+Os diferentes sistemas de lógica modal surgem em parte pela necessidade em diferentes
+tipos de aplicações e em parte porque nossas intuições sobre o que é necessariamente
+verdade ainda não estão completamente desenvolvidas. Originalmente, lógicas
+modais diferentes eram caracterizadas por conjuntos de axiomas distintos. 
+
 Definimos sistemas de lógica modal em termos do fecho sobre a regra de
 inferência (RPL), onde $A$ é uma consequência tautológica das sentenças $A_1,
 \ldots, A_n$.
@@ -498,6 +504,7 @@ e qualquer teorema de $\Sigma$ (note que esta relação é reflexiva).
     (2) Todo sistema de lógica modal é um PL-sistema. \\
     (3) PL é o menor sistema de lógica modal.
 \end{theorem}
+Demonstração. $\qed$
 
 Podemos definir noções de \textit{dedutibilidade} e \textit{consistência}, em
 termos de teoremicidade. 
@@ -524,6 +531,114 @@ Mais formalmente:
     
 \end{definition}
 
+Teoremicidade, dedutibilidade e consistência, como definitos, possuem todas as
+propriedades esperadas, algunas das quais estão enumeradas no seguinte teorema.
+
+\begin{theorem} ~
+    \begin{enumerate}
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+\end{theorem}
+
+Demonstração. $\qed$
+
+Iremos agora introduzir um conjunto dos sistemas mais conhecidos da lógica
+modal: $K$, $D$, $T$, $B$, $K4$, $S4$ além de retomarmos brevemente sobre o
+sistema $S5$ mencionado anteriormente. A definição destes sistemas utiliza a
+semântica de possíveis mundos.
+
+\begin{definition}[$L$-Válida]
+    Dizemos que o modelo $\mathcal{M} = <W, R, P>$ é baseado no quadro $<W,R>$.
+    Umafórmula $X$ é válida no modelo $\mathcal{M}$ se é verdadeira em todo
+    mundo de $W$. Uma fórmula $X$ é válida em um quadro se é válida em cada
+    modelo baseado naquele quadro. Finalmente, se $L$ é uma coleção de quadros,
+    $X$ é $L$-válida se $X$ é válida em cada quadro em $L$.
+\end{definition}
+
+Diferentes sistemas de lógica modal são caracterizados semanticamente como as
+fórmulas $L$-válidas, para $L$ classes em particular de quadros. Para
+exemplificar, o sistema chamado $T$ é caracterizado pela classe de quadros que
+contenham a propriedade de que todo mundo é acessível por ele mesmo. Este tipo
+de propriedade pode vir a ser útil posteriormente e está definida a seguir,
+junto com outras propriedades de valor similar.
+
+\begin{definition}
+    Seja $Q = <W,R>$ um quadro. Dizemos que $Q$ é:
+    \begin{enumerate}
+        \item \textit{reflexivo}
+        \item \textit{simétrico}
+        \item \textit{transitivo}
+        \item \textit{serial}
+        \item \textit{euclidiano}
+    \end{enumerate}
+    
+\end{definition}
+
+O sistema $T$, mencionado acima, é caracterizado pela classe de quadros
+reflexivos. A Tabela~\ref{table:condicoes_quadro} informa as classes de quadros
+aos quais os demais sistemas são caracterizados.
+
+\begin{table}
+    \begin{center}
+        \label{table:condicoes_quadro}
+        \caption{Alguns sistemas padrões de lógica modal}
+        \begin{tabular}{ll}
+            \hline
+            Sistema & condições para classe de quadros \\
+            \hline
+            $K$  & sem condições \\  
+            $D$  & serial \\ 
+            $T$  & reflexivo \\ 
+            $B$  & reflexivo, simétrico\\ 
+            $K4$ & transitivo \\  
+            $S4$ & reflexivo, transitivo \\  
+            $S5$ & reflexivo, simétrico, transitivo \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\begin{figure}
+\label{fig:subsistemas}
+\begin{center}
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node  (0) at (0, 2) {S5};
+        \node  (1) at (-2, 0.7) {B};
+        \node  (2) at (2, 0.7) {S4};
+        \node  (3) at (-2, -0.6) {T};
+        \node  (4) at (-2, -1.8) {D};
+        \node  (5) at (2, -1) {K4};
+        \node  (6) at (0, -2.7) {K};
+        \path[->,thick] (1) edge node {} (0)
+        (2) edge node {} (0)
+        (3) edge node {} (1)
+        (5) edge node {} (2)
+        (3) edge node {} (2)
+        (4) edge node {} (3)
+        (6) edge node {} (4)
+        (6) edge node {} (5);
+
+    \end{pgfonlayer}
+\end{tikzpicture}
+\end{center}
+\caption{Subsistemas}
+\end{figure}
+
 \subsection{Lógica Multimodal}
 \label{sub:lógica_multimodal}
 
@@ -549,9 +664,10 @@ onde:
 \begin{tikzpicture}[scale=2]
     \begin{pgfonlayer}{nodelayer}
         \node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
-        \node[style=newstyle] (1) at (-2, 0.9) {};
+        \node[style=newstyle] (1) at (-2, 1.4) {};
         \node[style=newstyle] (2) at (-0.25, 1) {};
-        \node[style=rect] (3) at (-2, 1) {M};
+        \node[style=newstyle] (4) at (-2, 0) {};
+        \node[style=rect2] (3) at (-2, 0.7) {M};
     \end{pgfonlayer}
 \end{tikzpicture}
 \caption{Exemplo estrutura de Kripke}
@@ -603,7 +719,15 @@ Seção~\ref{sub:tableaux}.
 \subsection{Resolução Clausal}
 Resolução clausal é um procecimento refutacional: para podermos provar a
 sentença $\varphi$, nós transformamos a negação de $\varphi$ na Forma Normal
-Conjuntiva antes de aplicar a regra de inferência
+Conjuntiva antes de aplicar a única regra de inferência definida para este tipo
+de prova.
+
+\begin{definition}[RES]
+\begin{mathpar}
+\label{res}
+\inferrule{(\varphi \vee \gamma) \\ (\psi \vee \neg \gamma)}{(\varphi \vee \psi)}
+\end{mathpar}
+\end{definition}
 
 \subsection{Tableaux}
 \label{sub:tableaux}
@@ -628,7 +752,7 @@ um método analítico baseado na prova por contradição.
         \node[style=quarequare] (7) at  (0.5, -0) {H};
         \node[style=quarequare] (8) at  (1.5, -0) {I};
         \node[style=quarequare] (9) at  (1.5, -1) {J};
-        \path[->] (0) edge node {} (2)
+        \path[-] (0) edge node {} (2)
         (0) edge node {} (1)
         (1) edge node {} (3)
         (3) edge node {} (4)
@@ -741,6 +865,69 @@ ramos.
     $Z$, e $Z$ é um \textit{teorema} se possui uma prova por tableaux.
 \end{definition}
 
+\begin{figure}
+    \label{fig:example1}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{pgfonlayer}{nodelayer}
+                \node  (0) at (0, 2) {P};
+                \node  (1) at (0, 1) {P};
+                \node  (2) at (0, -0) {P};
+                \node  (3) at (-4, -2) {P};
+                \node  (4) at (4, -2) {P};
+                \node  (5) at (-4, -3) {P};
+                \node  (6) at (4, -3) {P};
+                \node  (7) at (-4, -4) {P};
+                \node  (8) at (4, -4) {P};
+                \node  (9) at (-4, -5) {P};
+                \node  (10) at (4, -5) {P};
+                \node  (11) at (-4, -6) {P};
+                \node  (12) at (4, -6) {P};
+                \node  (13) at (-4, -7) {P};
+                \node  (14) at (4, -7) {P};
+                \path[-] (2) edge node {} (3)
+                         (2) edge node {} (4);
+            \end{pgfonlayer}
+        \end{tikzpicture}
+    \end{center}
+    \caption{Exemplo de prova por tableaux}
+\end{figure}
+
+\begin{definition}[Regras especiais de necessidade]
+    \begin{mathpar}
+\label{conj_rules}
+        T \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
+        D \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
+        B \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
+        4 \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
+        4r \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+    \end{mathpar}
+    
+\end{definition}
+
+\begin{table}
+    \begin{center}
+        \label{table:condicoes_quadro}
+        \caption{Alguns sistemas padrões de lógica modal}
+        \begin{tabular}{ll}
+            \hline
+            Sistema & condições para classe de quadros \\
+            \hline
+            $D$  & serial \\ 
+            $T$  & reflexivo \\ 
+            $B$  & reflexivo, simétrico\\ 
+            $K4$ & transitivo \\  
+            $S4$ & reflexivo, transitivo \\  
+            $S5$ & reflexivo, simétrico, transitivo \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
 \subsection{Tableaux Clausal}
 
 
