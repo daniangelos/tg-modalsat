@@ -5,7 +5,7 @@ Neste capítulo, introduziremos brevemente a base do pensamento modal.
 
 A lógica modal é determinada semanticamente por uma avaliação de necessidade e
 possibilidade --- na literatura, encontramos representações análogas, como por
-exemplo, de conhecimento e crença, respectivamente~\cite{artigoquefaladeknowledgeebelief} --- isto é, em resumo %forçado
+exemplo, de conhecimento e crença, respectivamente~\cite{belief} --- isto é, em resumo %forçado
 , a base da estrutura
 modal que data desde discursos do filósofo Leibniz: uma proposição é
 \textit{necessária} se ocorre em todos os possíveis mundos e \textit{possível}
@@ -81,7 +81,7 @@ As condições de verdade estão expressas na Tabela~\ref{table:truth}.
 \begin{center}
     \begin{table}[h!]
 \label{table:truth3}
-    \caption{Truth conditions}
+\caption{Valores de cláusulas}
 
     \begin{tabular}{ll}
 
@@ -89,24 +89,30 @@ As condições de verdade estão expressas na Tabela~\ref{table:truth}.
         (1) & $\models ^{\mathcal{M}}_{\alpha} \mathbb{P}_n$ se e somente se $\alpha \in
         P_n$ com $n=0,1,2,\ldots$\\
         \vspace{2mm}
-        (2)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        (2)  & $\models ^{\mathcal{M}}_{\alpha} \top$\\
         \vspace{2mm}
-        (3)  & $Not\ \models ^{\mathcal{M}}_{\alpha} $\\
+        (3)  & $\neg\ \models ^{\mathcal{M}}_{\alpha}\bot $\\
         \vspace{2mm}
-        (4)  & $\models ^{\mathcal{M}}_{\alpha} \neg A$ se e somente se $not\
+        (4)  & $\models ^{\mathcal{M}}_{\alpha} \neg A$ se e somente se $\neg \
         \models ^{\mathcal{M}}_{\alpha} A$\\
         \vspace{2mm}
-        (5)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        (5)  & $\models ^{\mathcal{M}}_{\alpha} A \wedge B\ sse\ ambos
+        \models ^{\mathcal{M}}_{\alpha} A\ e \models ^{\mathcal{M}}_{\alpha} B$ \\
         \vspace{2mm}
-        (6)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        (6)  & $\models ^{\mathcal{M}}_{\alpha} A \vee B\ sse\ pelo\ menos\ um
+        \models ^{\mathcal{M}}_{\alpha} A\ ou \models ^{\mathcal{M}}_{\alpha} B$ \\
         \vspace{2mm}
-        (7)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        (7)  & $\models ^{\mathcal{M}}_{\alpha} A \rightarrow B\ sse\ se\
+    \models ^{\mathcal{M}}_{\alpha} A\ entao \models ^{\mathcal{M}}_{\alpha} B$ \\
         \vspace{2mm}
-        (8)  & $\models ^{\mathcal{M}}_{\alpha} $\\
+        (8)  & $\models ^{\mathcal{M}}_{\alpha} A \leftrightarrow B\ sse\ 
+        \models ^{\mathcal{M}}_{\alpha} A\ sse \models ^{\mathcal{M}}_{\alpha} B$ \\
         \vspace{2mm}
-        (9)  & $\models ^{\mathcal{M}}_{\alpha} \Box A $\\
+        (9)  & $\models ^{\mathcal{M}}_{\alpha} \Box A\ sse\ \forall \beta \in
+        \mathcal{M}, \models ^{\mathcal{M}}_{\beta} A$\\
         \vspace{2mm}
-        (10) & $\models ^{\mathcal{M}}_{\alpha} \Diamond A $\\
+        (10)  & $\models ^{\mathcal{M}}_{\alpha} \Diamond A\ sse\ \exists \beta \in
+        \mathcal{M}, \models ^{\mathcal{M}}_{\beta} A$\\
 
     \end{tabular}
 \end{table}
@@ -175,7 +181,7 @@ possíveis mundos.
         \node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
         \node[style=newstyle] (1) at (-2, 0.9) {};
         \node[style=newstyle] (2) at (-0.25, 1) {};
-        \node[style=rect] (3) at (-2, 1) {M};
+        \node[style=rect] (3) at (-2, 1) {};
     \end{pgfonlayer}
 \end{tikzpicture}
 \caption{Exemplo lógica modal}
@@ -247,34 +253,35 @@ $\wedge$, $\vee$, $\rightarrow$ e $\leftrightarrow$ são operadores de aridade
 dois.
 
 O conjunto de sentenças pode, então, ser definido formalmente como mostrado na
-Tabela~\ref{table:sentences}.
+Tabela~\ref{table:sentences}, para tal, considere que $A$ e $B$ já são
+sentenças.
 
 \begin{center}
     \begin{table}[h!]
 \label{table:sentences}
-    \caption{Truth conditions}
+\caption{Formação de sentenças}
 
     \begin{tabular}{ll}
         \vspace{2mm}
-        (1) & a \\
+        (1) & $\mathbb{P}_n$ é uma sentença, para n = 0, 1, \ldots\\
         \vspace{2mm}
-        (2)  & a \\
+        (2)  & $\top$\\
         \vspace{2mm}
-        (3)  & a \\
+        (3)  & $\bot$\\
         \vspace{2mm}
-        (4)  &a \\
+        (4)  & $\neg A$\\
         \vspace{2mm}
-        (5)  & a \\
+        (5)  & $A \wedge B$\\
         \vspace{2mm}
-        (6)  &a \\
+        (6)  & $A \vee B$\\
         \vspace{2mm}
-        (7)  &a \\
+        (7)  & $A \rightarrow B$\\
         \vspace{2mm}
-        (8)  &a \\
+        (8)  & $A \leftrightarrow B$\\
         \vspace{2mm}
-        (9)  &a \\
+        (9)  & $\Box A$\\
         \vspace{2mm}
-        (10) &a
+        (10) &$\Diamond A$
     \end{tabular}
 \end{table}
 \end{center}
@@ -329,10 +336,10 @@ A transformação em FNN é dada pelo seguinte procedimento:
     \item Elimine
 \end{enumerate}
 
-A simplificação de fórmulas aplica as seguintes regras de reescrita:
-\begin{itemize}
-    \item 
-\end{itemize}
+%A simplificação de fórmulas aplica as seguintes regras de reescrita:
+%\begin{itemize}
+    %\item 
+%\end{itemize}
 
 \begin{definition}[Forma Normal Conjuntiva (FNC)]
     Seja $\varphi \in FBF_{L_P}$, dizemos que $\varphi$ está na Forma Normal
@@ -553,21 +560,26 @@ propriedades esperadas, algunas das quais estão enumeradas no seguinte teorema.
 
 \begin{theorem} ~
     \begin{enumerate}
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
-        \item 
+        \item $\vdash_{\Sigma}A\ sse\ \emptyset \vdash_{\Sigma}A$
+        \item $\vdash_{\Sigma}A\ sse\ \forall \Gamma, \Gamma \vdash_{\Sigma}A$
+        \item $Se\ \Gamma \vdash_{PL}A\ entao\ \Gamma \vdash_{\Sigma}A$
+        \item $Se\ A\in \Gamma\ entao\ \Gamma \vdash_{\Sigma}A$ \item $Se\ \Gamma
+            \vdash_{\Sigma}B\ e\ \{B\}\vdash_{\Sigma}A\ entao\ \Gamma
+            \vdash_{\Sigma}A$
+        \item $Se\ \Gamma \vdash_{\Sigma}A\ e \Gamma \in \Delta\ entao\ \Delta
+            \vdash_{\Sigma} A$
+        \item $\Gamma \vdash_{\Sigma}A\ sse\ existe\ um\ subconjunto\ finito\ 
+            \Delta\ de\ \Gamma\ tal\ que\ \Delta \vdash_{\Sigma}A$
+        \item $\Gamma \vdash_{\Sigma}A\rightarrow B\ sse \Gamma \vdash_{\Sigma}A$
+        \item $Con_{\Sigma}\ \Gamma\ sse\ existe\ um\ A\ tal\ que\ \neg \Gamma \vdash_{\Sigma}A$
+        \item $Con_{\Sigma}\ \Gamma\ sse\ nao\ existe\ A\ tal\ que\ ambos\ \Gamma
+            \vdash_{\Sigma}A \Gamma \vdash_{\Sigma}\neg A$
+        \item $Se\ Con_{\Sigma}\ \Gamma\ entao\ Con_{PL}\Gamma$
+        \item $Se\ Con_{\Sigma}\ e\ \Delta \in \Gamma\ entao\ Con_{\Delta}$
+        \item $Con_{\Sigma}\ \Gamma\ sse\ \forall \Delta \in \Gamma,
+            Con_{\Sigma}\Delta$
+        \item $\Gamma \vdash_{\Sigma}A\ sse\ Con\{\neg A\}$
+        \item $Con_{\Sigma}\Gamma \{A\}\ sse\ \neg \Gamma \vdash_{\Sigma}\neg A$
     \end{enumerate}
 \end{theorem}
 
@@ -609,7 +621,7 @@ O sistema $T$, mencionado acima, é caracterizado pela classe de quadros
 reflexivos. A Tabela~\ref{table:condicoes_quadro} informa as classes de quadros
 aos quais os demais sistemas são caracterizados.
 
-\begin{table}
+\begin{table}[h!]
     \begin{center}
         \label{table:condicoes_quadro}
         \caption{Alguns sistemas padrões de lógica modal}
@@ -628,6 +640,11 @@ aos quais os demais sistemas são caracterizados.
         \end{tabular}
     \end{center}
 \end{table}
+
+A figura~\ref{fig:subsistemas} mostra como os sistemas de lógica modal
+mencionados nesta seção estão
+relacionados entre si, ou seja, se existe uma seta partindo de $L$ e chegando em $J$, sendo $L$ e
+$J$ sistemas, podemos dizer que $J$ é um $L$-sistema.
 
 \begin{figure}
 \label{fig:subsistemas}
@@ -753,7 +770,7 @@ Métodos de demonstração utilizando tableaux são frequentemente utilizados,
 com sucesso, em lógica modal para prover decisões de procedimento.
 
 O tableaux consiste em uma prova representada graficamente na forma de árvore. É
-um método analítico baseado na prova por contradição.
+um método analítico baseado na prova por contradição~\cite{fit:tableaux}.
 
 \begin{figure}
 \begin{center}
@@ -827,10 +844,12 @@ ramos.
     Para qualquer prefixo $\sigma$:
     \begin{mathpar}
 \label{conj_rules}
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+        \inferrule{\sigma~X\wedge Y}{\sigma~X \quad \sigma~Y} \qquad
+        \inferrule{\sigma~\neg(X\vee Y)}{\sigma~\neg X \quad \sigma~\neg Y} \\
+        \inferrule{\sigma~\neg(X\rightarrow Y)}{\sigma~X \quad \sigma~\neg Y}
+        \qquad
+        \inferrule{\sigma~X\leftrightarrow Y}{\sigma~X \rightarrow\ Y \\ 
+        \sigma~Y\rightarrow X}
     \end{mathpar}
 \end{definition}
 
@@ -838,10 +857,12 @@ ramos.
     Para qualquer prefixo $\sigma$:
     \begin{mathpar}
 \label{disj_rules}
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+        \inferrule{\sigma~X\vee Y}{\sigma~X~|~\sigma~Y} \qquad
+        \inferrule{\sigma~\neg(X\wedge Y)}{\sigma~\neg X~|~\sigma~\neg Y} \\
+        \inferrule{\sigma~X\rightarrow Y}{\sigma~\neg X~|~\sigma~Y}
+        \qquad
+        \inferrule{\sigma~\neg(X\leftrightarrow Y)}{\sigma~\neg(X \rightarrow
+        Y)~|~\sigma~\neg(Y \rightarrow X)}
     \end{mathpar}
 \end{definition}
 
@@ -857,17 +878,17 @@ ramos.
     Para qualquer prefixo $\sigma$:
     \begin{mathpar}
 \label{doublenegation}
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+        \inferrule{\sigma~\Diamond X}{\sigma.n X} \qquad
+        \inferrule{\sigma~\neg\Box X}{\sigma.n \neg X} 
     \end{mathpar}
 \end{definition}
 
-\begin{definition}[Regras de Necessidade Básicas]
+\begin{definition}[Regras Básicas de Necessidade]
     Para qualquer prefixo $\sigma$:
     \begin{mathpar}
 \label{doublenegation}
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+        \inferrule{\sigma~\Box X}{\sigma.n X} \qquad
+        \inferrule{\sigma~\neg\Diamond X}{\sigma.n \neg X} 
     \end{mathpar}
 \end{definition}
 
@@ -883,7 +904,7 @@ ramos.
     $Z$, e $Z$ é um \textit{teorema} se possui uma prova por tableaux.
 \end{definition}
 
-\begin{figure}
+\begin{figure}[h!]
     \label{fig:example1}
     \begin{center}
         \begin{tikzpicture}
@@ -914,16 +935,16 @@ ramos.
 \begin{definition}[Regras especiais de necessidade]
     \begin{mathpar}
 \label{conj_rules}
-        T \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
-        D \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
-        B \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
-        4 \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} \\
-        4r \quad \inferrule{\sigma~\neg\neg X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
+        T \quad \inferrule{\sigma~\Box X}{\sigma~X} \qquad
+        \inferrule{\sigma~\neg\Diamond X}{\sigma~\neg X} \\
+        D \quad \inferrule{\sigma~\Box X}{\sigma \Diamond~X} \qquad
+        \inferrule{\sigma~\neg\Diamond X}{\sigma~\neg\Box X} \\
+        B \quad \inferrule{\sigma.n \Box X}{\sigma~X} \qquad
+        \inferrule{\sigma.n \neg\Diamond X}{\sigma~\neg X} \\
+        4 \quad \inferrule{\sigma~\Box X}{\sigma.n \Box X} \qquad
+        \inferrule{\sigma\neg\Diamond X}{\sigma.n \neg\Diamond X} \\
+        4r \quad \inferrule{\sigma.n \Box X}{\sigma~\Box X} \qquad
+        \inferrule{\sigma.n \neg\Diamond X}{\sigma~\neg\Diamond X} 
     \end{mathpar}
     
 \end{definition}
@@ -931,7 +952,7 @@ ramos.
 \begin{table}
     \begin{center}
         \label{table:condicoes_quadro}
-        \caption{Alguns sistemas padrões de lógica modal}
+        \caption{Relações que definem os sistemas modais}
         \begin{tabular}{ll}
             \hline
             Sistema & condições para classe de quadros \\
@@ -984,3 +1005,7 @@ ramos.
 \end{figure}
 
 \subsection{Tableaux Clausal}
+Para esta seção, considere $L$ como um dos sistemas de lógica modal introduzidos
+anteriormente. No cálculo de tableaux clausal, os numeradores das regras são
+conjuntos de cláusulas, então para um cálclo de tableaux $L$-clausal, é exigido
+que os numeradores das regras sejam conjuntos de $L$-cláusulas.~\cite{clausal_tableaux}
