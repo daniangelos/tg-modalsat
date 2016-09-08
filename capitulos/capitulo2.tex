@@ -33,250 +33,252 @@ modelar a ocorrência verdadeira destas sentenças.
 
 A lógica modal pode ser expressa de diferentes formas e contar com diferentes
 axiomas através da ideia de sistemas, isto será explorado com mais detalhes 
-na seção~\ref{sec:sistemas}. Um dos sistemas mais simples conhecidos é o $S5$, e
-este será utilizado para introdução, e, posteriormente, sua estrutura será
-expandido para uma forma mais geral.
+na seção~\ref{sec:sistemas}. 
 
-Um modelo no sistema $S5$ é, portanto, uma tupla:
-<$W$,~$P$>
-onde $W$ é um conjunto de possíveis mundos e $P$ uma abreviação para a sequência
-infinita 
-$P_0,\ P_1,\ P_2,\ldots$
-de subconjuntos de $W$.
-Note que $W$ pode conter mundos que não estão presentes em nenhum dos conjuntos
-$P_n$; de fato, qualquer um desses conjuntos pode ser vazio.
+%Um dos sistemas mais simples conhecidos é o $S5$, e
+%este será utilizado para introdução, e, posteriormente, sua estrutura será
+%expandido para uma forma mais geral.
 
-Definimos o valor da sentença (verdadeiro ou falso) de acordo com sua forma e em
-termos de um possível mundo em um modelo.
-Usamos a notação:
-\begin{equation}
-    \label{modal:truth}
-    \models ^{\mathcal{M}}_{\alpha} A 
-\end{equation}
-onde $A$ é uma sentença e $\alpha$ é um possível mundo em um modelo
-$\mathcal{M}=<W,P>$.
-A lei~\ref{modal:truth} é um resumo para: $A\ é\ verdadeiro\ em\ \alpha\ no
-modelo\ \mathcal{M}$.
+%Um modelo no sistema $S5$ é, portanto, uma tupla:
+%<$W$,~$P$>
+%onde $W$ é um conjunto de possíveis mundos e $P$ uma abreviação para a sequência
+%infinita 
+%$P_0,\ P_1,\ P_2,\ldots$
+%de subconjuntos de $W$.
+%Note que $W$ pode conter mundos que não estão presentes em nenhum dos conjuntos
+%$P_n$; de fato, qualquer um desses conjuntos pode ser vazio.
 
-As condições de verdade estão expressas na Tabela~\ref{table:truth}.
+%Definimos o valor da sentença (verdadeiro ou falso) de acordo com sua forma e em
+%termos de um possível mundo em um modelo.
+%Usamos a notação:
+%\begin{equation}
+    %\label{modal:truth}
+    %\models ^{\mathcal{M}}_{\alpha} A 
+%\end{equation}
+%onde $A$ é uma sentença e $\alpha$ é um possível mundo em um modelo
+%$\mathcal{M}=<W,P>$.
+%A lei~\ref{modal:truth} é um resumo para: $A\ é\ verdadeiro\ em\ \alpha\ no
+%modelo\ \mathcal{M}$.
 
-\begin{center}
-    \begin{table}[h!]
-\label{table:truth3}
-\caption{Valores de cláusulas}
+%As condições de verdade estão expressas na Tabela~\ref{table:truth}.
 
-    \begin{tabular}{ll}
+%\begin{center}
+    %\begin{table}[h!]
+%\label{table:truth3}
+%\caption{Valores de cláusulas}
 
-        \vspace{2mm}
-        (1) & $\models ^{\mathcal{M}}_{\alpha} \mathbb{P}_n$ se e somente se $\alpha \in
-        P_n$ com $n=0,1,2,\ldots$\\
-        \vspace{2mm}
-        (2)  & $\models ^{\mathcal{M}}_{\alpha} \top$\\
-        \vspace{2mm}
-        (3)  & $\neg\ \models ^{\mathcal{M}}_{\alpha}\bot $\\
-        \vspace{2mm}
-        (4)  & $\models ^{\mathcal{M}}_{\alpha} \neg A$ se e somente se $\neg \
-        \models ^{\mathcal{M}}_{\alpha} A$\\
-        \vspace{2mm}
-        (5)  & $\models ^{\mathcal{M}}_{\alpha} A \wedge B\ sse\ ambos
-        \models ^{\mathcal{M}}_{\alpha} A\ e \models ^{\mathcal{M}}_{\alpha} B$ \\
-        \vspace{2mm}
-        (6)  & $\models ^{\mathcal{M}}_{\alpha} A \vee B\ sse\ pelo\ menos\ um
-        \models ^{\mathcal{M}}_{\alpha} A\ ou \models ^{\mathcal{M}}_{\alpha} B$ \\
-        \vspace{2mm}
-        (7)  & $\models ^{\mathcal{M}}_{\alpha} A \rightarrow B\ sse\ se\
-    \models ^{\mathcal{M}}_{\alpha} A\ entao \models ^{\mathcal{M}}_{\alpha} B$ \\
-        \vspace{2mm}
-        (8)  & $\models ^{\mathcal{M}}_{\alpha} A \leftrightarrow B\ sse\ 
-        \models ^{\mathcal{M}}_{\alpha} A\ sse \models ^{\mathcal{M}}_{\alpha} B$ \\
-        \vspace{2mm}
-        (9)  & $\models ^{\mathcal{M}}_{\alpha} \Box A\ sse\ \forall \beta \in
-        \mathcal{M}, \models ^{\mathcal{M}}_{\beta} A$\\
-        \vspace{2mm}
-        (10)  & $\models ^{\mathcal{M}}_{\alpha} \Diamond A\ sse\ \exists \beta \in
-        \mathcal{M}, \models ^{\mathcal{M}}_{\beta} A$\\
+    %\begin{tabular}{ll}
 
-    \end{tabular}
-\end{table}
-\end{center}
+        %\vspace{2mm}
+        %(1) & $\models ^{\mathcal{M}}_{\alpha} \mathbb{P}_n$ se e somente se $\alpha \in
+        %P_n$ com $n=0,1,2,\ldots$\\
+        %\vspace{2mm}
+        %(2)  & $\models ^{\mathcal{M}}_{\alpha} \top$\\
+        %\vspace{2mm}
+        %(3)  & $\neg\ \models ^{\mathcal{M}}_{\alpha}\bot $\\
+        %\vspace{2mm}
+        %(4)  & $\models ^{\mathcal{M}}_{\alpha} \neg A$ se e somente se $\neg \
+        %\models ^{\mathcal{M}}_{\alpha} A$\\
+        %\vspace{2mm}
+        %(5)  & $\models ^{\mathcal{M}}_{\alpha} A \wedge B\ sse\ ambos
+        %\models ^{\mathcal{M}}_{\alpha} A\ e \models ^{\mathcal{M}}_{\alpha} B$ \\
+        %\vspace{2mm}
+        %(6)  & $\models ^{\mathcal{M}}_{\alpha} A \vee B\ sse\ pelo\ menos\ um
+        %\models ^{\mathcal{M}}_{\alpha} A\ ou \models ^{\mathcal{M}}_{\alpha} B$ \\
+        %\vspace{2mm}
+        %(7)  & $\models ^{\mathcal{M}}_{\alpha} A \rightarrow B\ sse\ se\
+    %\models ^{\mathcal{M}}_{\alpha} A\ entao \models ^{\mathcal{M}}_{\alpha} B$ \\
+        %\vspace{2mm}
+        %(8)  & $\models ^{\mathcal{M}}_{\alpha} A \leftrightarrow B\ sse\ 
+        %\models ^{\mathcal{M}}_{\alpha} A\ sse \models ^{\mathcal{M}}_{\alpha} B$ \\
+        %\vspace{2mm}
+        %(9)  & $\models ^{\mathcal{M}}_{\alpha} \Box A\ sse\ \forall \beta \in
+        %\mathcal{M}, \models ^{\mathcal{M}}_{\beta} A$\\
+        %\vspace{2mm}
+        %(10)  & $\models ^{\mathcal{M}}_{\alpha} \Diamond A\ sse\ \exists \beta \in
+        %\mathcal{M}, \models ^{\mathcal{M}}_{\beta} A$\\
 
-Alguns esclarecimentos sobre essas definições podem ser úteis:
-\begin{itemize}
-    \item A cláusula (1) reflete a premissa sobre os conjuntos $P_0, P_1, P_2,
-        \ldots$ em um modelo: uma sentença at\^omica $\mathbb{P}_n$ é verdadeira
-        em um possível mundo $\alpha$ somente no caso em que $\alpha$ é um
-        elemento do conjunto $P_n$.
-    \item De acordo com a cláusula (2), a constante verdadeira $\top$ é sempre
-        válida em $\alpha$.
-    \item Por (3), a constante falsa $\bot$ é sempre falsa em $\alpha$.
-    \item A cláusula (4) afirma que a negação $\neg A$ é verdadeira em $\alpha$
-        se, e somente se, sua negação $A$ é falsa em $\alpha$.
-    \item A afirmação da cláusula (5) diz que uma conjunção $A \wedge B$ é
-        verdadeira em $\alpha$ somente no caso em que ambas sentenças, $A$ e
-        $B$ o são.
-    \item Já de acordo com a cláusula (6), uma disjunção $A \vee B$ é verdadeira
-        em $\alpha$ quando pelo menos uma das sentençãos, $A$ ou $B$ o é.
-    \item A inteção com a cláusula (7) é compreender que uma implicação $A \rightarrow
-        B$ é verdadeira em $\alpha$ desde que nunca ocorra que a sentença antecedente,
-        $A$, seja verdadeira ao mesmo tempo em que a consequente, $B$, seja
-        falsa.
-    \item Similarmente, na cláusula (8) a intenção se repete de ambos os lados,
-        ou seja, a condição $A \leftrightarrow B$ é verdadeira quando ambas
-        sentenças, $A$ e $B$, são verdadeiras, ou ambas são falsas.
-    \item A cláusua (9) formula a interpretação leibniziana de necessidade:
-        $\Box A$
-    \item Finalmente, de acordo com a cláusula (10), $\Diamond A$
-\end{itemize}
+    %\end{tabular}
+%\end{table}
+%\end{center}
 
-Observe que as constantes $\top$ e $\bot$ são, na realidade, operadores de
-aridade zero. Abstrações necessárias para algumas simplificações que veremos
-mais a frente.
+%Alguns esclarecimentos sobre essas definições podem ser úteis:
+%\begin{itemize}
+    %\item A cláusula (1) reflete a premissa sobre os conjuntos $P_0, P_1, P_2,
+        %\ldots$ em um modelo: uma sentença at\^omica $\mathbb{P}_n$ é verdadeira
+        %em um possível mundo $\alpha$ somente no caso em que $\alpha$ é um
+        %elemento do conjunto $P_n$.
+    %\item De acordo com a cláusula (2), a constante verdadeira $\top$ é sempre
+        %válida em $\alpha$.
+    %\item Por (3), a constante falsa $\bot$ é sempre falsa em $\alpha$.
+    %\item A cláusula (4) afirma que a negação $\neg A$ é verdadeira em $\alpha$
+        %se, e somente se, sua negação $A$ é falsa em $\alpha$.
+    %\item A afirmação da cláusula (5) diz que uma conjunção $A \wedge B$ é
+        %verdadeira em $\alpha$ somente no caso em que ambas sentenças, $A$ e
+        %$B$ o são.
+    %\item Já de acordo com a cláusula (6), uma disjunção $A \vee B$ é verdadeira
+        %em $\alpha$ quando pelo menos uma das sentençãos, $A$ ou $B$ o é.
+    %\item A inteção com a cláusula (7) é compreender que uma implicação $A \rightarrow
+        %B$ é verdadeira em $\alpha$ desde que nunca ocorra que a sentença antecedente,
+        %$A$, seja verdadeira ao mesmo tempo em que a consequente, $B$, seja
+        %falsa.
+    %\item Similarmente, na cláusula (8) a intenção se repete de ambos os lados,
+        %ou seja, a condição $A \leftrightarrow B$ é verdadeira quando ambas
+        %sentenças, $A$ e $B$, são verdadeiras, ou ambas são falsas.
+    %\item A cláusua (9) formula a interpretação leibniziana de necessidade:
+        %$\Box A$
+    %\item Finalmente, de acordo com a cláusula (10), $\Diamond A$
+%\end{itemize}
 
-Na Figura~\ref{figure:mundos_simples} está ilustrado um exemplo de modelo para a
-lógica modal. No exemplo, o modelo $\mathcal{M}$ possui três mundos, $\alpha$,
-$\beta$ e $\omega$. Os conjuntos de mundos onde as sentenças at\^omicas são
-verdadeiras será expressado da seguinte forma:
+%Observe que as constantes $\top$ e $\bot$ são, na realidade, operadores de
+%aridade zero. Abstrações necessárias para algumas simplificações que veremos
+%mais a frente.
 
-\begin{align}
-    P_0 &= \{\alpha, \beta, \omega\} \\
-    P_1 &= \{\alpha, \beta\}\\
-    P_2 &= \{\alpha, \omega\}\\
-    P_n &= \emptyset, \forall n > 2
-\end{align}
+%Na Figura~\ref{figure:mundos_simples} está ilustrado um exemplo de modelo para a
+%lógica modal. No exemplo, o modelo $\mathcal{M}$ possui três mundos, $\alpha$,
+%$\beta$ e $\omega$. Os conjuntos de mundos onde as sentenças at\^omicas são
+%verdadeiras será expressado da seguinte forma:
 
-Podemos, portanto expressar as seguintes sentenças para o modelo $\mathcal{M}$,
-sendo todas verdadeiras:
+%\begin{align}
+    %P_0 &= \{\alpha, \beta, \omega\} \\
+    %P_1 &= \{\alpha, \beta\}\\
+    %P_2 &= \{\alpha, \omega\}\\
+    %P_n &= \emptyset, \forall n > 2
+%\end{align}
 
-\begin{align}
-    P_n &= \emptyset, \forall n > 2
-\end{align}
+%Podemos, portanto expressar as seguintes sentenças para o modelo $\mathcal{M}$,
+%sendo todas verdadeiras:
 
-Observe que não é verdade que $\Box \mathbb{P}_1$, pois $\mathbb{P}_1$ não é
-ocorre em $\omega$, ou seja, não satisfaz a condição de ocorrer em todos os
-possíveis mundos.
+%\begin{align}
+    %P_n &= \emptyset, \forall n > 2
+%\end{align}
 
-\begin{figure}
-\begin{center}
-\label{figure:mundos_simples}
-\begin{tikzpicture}[scale=2]
-    \begin{pgfonlayer}{nodelayer}
-        \node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
-        \node[style=newstyle] (1) at (-2, 0.9) {};
-        \node[style=newstyle] (2) at (-0.25, 1) {};
-        \node[style=rect] (3) at (-2, 1) {};
-    \end{pgfonlayer}
-\end{tikzpicture}
-\caption{Exemplo lógica modal}
-\end{center}
-\end{figure}
+%Observe que não é verdade que $\Box \mathbb{P}_1$, pois $\mathbb{P}_1$ não é
+%ocorre em $\omega$, ou seja, não satisfaz a condição de ocorrer em todos os
+%possíveis mundos.
 
-Uma sentença verdadeira em cada possível mundo em qualquer modelo é chamada
-\textit{sentença válida}. Usamos o símbolo $\models$ novamente, mas desta vez sem as
-marcações superior e inferior (para enfatizar que a sentença é verdadeira, sem
-importar o mundo ou o modelo), e escrevemos $\models A$ quando $A$ é uma
-sentença válida.
-Mais formalmente, então, definimos a validade de uma sentença da seguinte forma:
-
-\begin{equation}
-    \models A\ se,\ e\ somente\ se,\ para\ todo\ modelo\ \mathcal{M}\ e\ para\ 
-    qualquer\ mundo\ \alpha\ em\ \mathcal{M},\ temos\ que\ \models ^{\mathcal{M}}_\alpha 
-\end{equation}
-
-No estudo da lógica da necessidade e possibilidade, queremos saber quais são as
-sentenças válidas --- verdadeiras, sem se importar com interpretações, em
-qualquer mundo possível --- e quais não são. Por exemplo, podemos demonstrar que
-toda sentença da forma $\Box A \rightarrow A$ é válida, enquanto que nem toda
-sentença da forma $A \rightarrow \Box A$ o é.
-
-
-%% KEEP ON BABY
-
-%\includegraphics[scale=0.8]{imagens/ex_modal_simples.png}
-
-%\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
-    %\node [int, pin={[init]above:$v_0$}] (a) {$\frac{1}{s}$};
-    %\node (b) [left of=a,node distance=2cm, coordinate] {a};
-    %\node [int, pin={[init]above:$p_0$}] (c) [right of=a]
-    %{$\frac{1}{s}$};
-    %\node [coordinate] (end) [right of=c, node distance=2cm]{};
-    %\path[->] (b) edge node {$a$} (a);
-    %\path[->] (a) edge node {$v$} (c);
-    %\draw[->] (c) edge node {$p$} (end) ;
+%\begin{figure}
+%\begin{center}
+%\label{figure:mundos_simples}
+%\begin{tikzpicture}[scale=2]
+    %\begin{pgfonlayer}{nodelayer}
+        %\node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
+        %\node[style=newstyle] (1) at (-2, 0.9) {};
+        %\node[style=newstyle] (2) at (-0.25, 1) {};
+        %\node[style=rect] (3) at (-2, 1) {};
+    %\end{pgfonlayer}
 %\end{tikzpicture}
-%\tikzset{simple/.style={thick}}
+%\caption{Exemplo lógica modal}
+%\end{center}
+%\end{figure}
+
+%Uma sentença verdadeira em cada possível mundo em qualquer modelo é chamada
+%\textit{sentença válida}. Usamos o símbolo $\models$ novamente, mas desta vez sem as
+%marcações superior e inferior (para enfatizar que a sentença é verdadeira, sem
+%importar o mundo ou o modelo), e escrevemos $\models A$ quando $A$ é uma
+%sentença válida.
+%Mais formalmente, então, definimos a validade de uma sentença da seguinte forma:
+
+%\begin{equation}
+    %\models A\ se,\ e\ somente\ se,\ para\ todo\ modelo\ \mathcal{M}\ e\ para\ 
+    %qualquer\ mundo\ \alpha\ em\ \mathcal{M},\ temos\ que\ \models ^{\mathcal{M}}_\alpha 
+%\end{equation}
+
+%No estudo da lógica da necessidade e possibilidade, queremos saber quais são as
+%sentenças válidas --- verdadeiras, sem se importar com interpretações, em
+%qualquer mundo possível --- e quais não são. Por exemplo, podemos demonstrar que
+%toda sentença da forma $\Box A \rightarrow A$ é válida, enquanto que nem toda
+%sentença da forma $A \rightarrow \Box A$ o é.
+
+
+%%% KEEP ON BABY
+
+%%\includegraphics[scale=0.8]{imagens/ex_modal_simples.png}
+
+%%\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+    %%\node [int, pin={[init]above:$v_0$}] (a) {$\frac{1}{s}$};
+    %%\node (b) [left of=a,node distance=2cm, coordinate] {a};
+    %%\node [int, pin={[init]above:$p_0$}] (c) [right of=a]
+    %%{$\frac{1}{s}$};
+    %%\node [coordinate] (end) [right of=c, node distance=2cm]{};
+    %%\path[->] (b) edge node {$a$} (a);
+    %%\path[->] (a) edge node {$v$} (c);
+    %%\draw[->] (c) edge node {$p$} (end) ;
+%%\end{tikzpicture}
+%%\tikzset{simple/.style={thick}}
 
 
 
 %??
 \section{Preliminares lógicas}
 \subsection{Sintaxe}
+\label{sec:sintaxe}
 
 Esta seção é dedicada a trazer o básico dos conceitos de sintaxe da linguagem da
 lógica modal. As definições formais apresentadas podem ser úteis ao
 entendimento.
 
 \subsubsection{Sentenças} 
-A linguagem é baseada em um conjunto enumerável de sentenças
-\textit{at\^omicas}: 
+A linguagem proposicional clássica é formada por um conjunto enumerável de sentenças
+\textit{at\^omicas} (ou símbolos proposicionais): 
 \begin{equation}
-    \mathbb{P}_0, \mathbb{P}_1, \mathbb{P}_2, \ldots 
+\label{simb_prop}
+    \mathcal{P} = \{\mathbb{P}_0, \mathbb{P}_1, \mathbb{P}_2, \ldots\}
 \end{equation}
-Estas são as sentenças mais simples possívels.
+Estas são as sentenças mais simples possível.
 
-As \textit{sentenças moleculares} (não-at\^omicas) são formadas por meio das nove
-\textit{operações sintáticas}, ou \textit{operadores lógicos}:
-\begin{equation}
-   \top, \bot, \neg, \wedge, \vee, \rightarrow, \leftrightarrow, \Box, \Diamond
-\end{equation}
+Já as \textit{sentenças moleculares} (não-at\^omicas) são formadas por meio das
+\textit{operações sintáticas}, ou \textit{operadores lógicos}: $\neg$, $\vee$ e
+$\nec{\agent}$, para todo $\agent \in \Agents = \{1,\ldots, n\}$, $n \in \Nat$.
+Observe que $\neg$ e $\nec{\agent}$ são operadores unários e $\vee$ é um operador
+binário. Além disso, um conjunto de sinais de pontuação $\{(,)\}$ é usado para
+evitar ambiguidade na leitura de sentenças.
 
-Como mencionado na seção anterior, $\top$ e $\bot$ são operadores de aridade
-zero, ou constantes; $\neg$, $\Box$ e $\Diamond$ são operadores de aridade um; e
-$\wedge$, $\vee$, $\rightarrow$ e $\leftrightarrow$ são operadores de aridade
-dois.
+Podemos então definir uma fórmula como uma combinação finita de sentenças
+moleculares. A \textit{Linguagem Lógica Modal} é, portanto, equivalente ao seu
+conjunto de \textit{fórmulas bem formadas}, definido a seguir.
 
-O conjunto de sentenças pode, então, ser definido formalmente como mostrado na
-Tabela~\ref{table:sentences}, para tal, considere que $A$ e $B$ já são
-sentenças.
+\begin{definition} O conjunto de \textit{fórmulas bem formadas da linguagem modal}, denotado por
+$FBF_{K}$ é definido indutivamente como segue:
+    \label{def:fbf}
 
-\begin{center}
-    \begin{table}[h!]
-\label{table:sentences}
-\caption{Formação de sentenças}
+    \begin{enumerate}
+    \item Os símbolos proposicionais estão em $FBF_{K}$;
+    \item Se $\varphi \in FBF_{K}$, então $\neg \varphi$ e $\nec{\agent}\varphi$, $\agent \in \Agents$, estão em $FBF_{K}$; e
+    \item Se $\varphi$ e $\psi$ estão em $FBF_{K}$, então $(\varphi \vee \psi)$ está em $FBF_{K}$.
+    \end{enumerate}
+    
+\label{def:fbf}
+\end{definition}
 
-    \begin{tabular}{ll}
-        \vspace{2mm}
-        (1) & $\mathbb{P}_n$ é uma sentença, para n = 0, 1, \ldots\\
-        \vspace{2mm}
-        (2)  & $\top$\\
-        \vspace{2mm}
-        (3)  & $\bot$\\
-        \vspace{2mm}
-        (4)  & $\neg A$\\
-        \vspace{2mm}
-        (5)  & $A \wedge B$\\
-        \vspace{2mm}
-        (6)  & $A \vee B$\\
-        \vspace{2mm}
-        (7)  & $A \rightarrow B$\\
-        \vspace{2mm}
-        (8)  & $A \leftrightarrow B$\\
-        \vspace{2mm}
-        (9)  & $\Box A$\\
-        \vspace{2mm}
-        (10) &$\Diamond A$
-    \end{tabular}
-\end{table}
-\end{center}
+Outros operadores lógicos podem ser introduzidos como abreviações para fórmulas
+construídas a partir dos operadores já definidos, como usual. Em particular,
+neste trabalho as seguintes abreviações serão utilizadas: $(\varphi \land \psi)
+= \neg (\neg \varphi \lor \neg \psi)$ (conjunção), $(\varphi \then \psi) = (\neg
+\varphi \lor \psi)$ (implicação), $\pos{\agent} \varphi= \neg \nec{\agent} \neg
+\varphi$ (possibilidade), $\cfalse = (\varphi \land \neg \varphi)$
+(\emph{falsum}) e $\ctrue = \neg \cfalse$ (\emph{verum}). A precedência dos
+operadores é dada na seguinte ordem (onde $\agent \in \Agents)$:
+\begin{enumerate} 
+    \item $\{\neg, \nec{\agent}, \pos{\agent}\}$ 
+    \item $\{\wedge\}$ 
+    \item $\{\vee\}$ 
+    \item $\{\rightarrow\}$ 
+\end{enumerate}
 
-As sentenças at\^omicas são todas distintas entre si, e a intenção é que sentenças
-de formas diferentes também sejam distintas, como, por exemplo, nenhuma sentença
-condicional é uma necessidade. Isto é garantido pela suposição de que o alcance
-dos operadores sintáticos é disjunto dois a dois e ainda, disjunto do conjunto
-de sentenças at\^omicas.
-A falta de ambiguidade das sentenças é garantida pela suposição de que as
-operações são todas \textit{um-pra-um}, ou seja, duas condicionais são, por
-exemplo, iguais se, e somente se, ambos antecedentes e consequentes o são.
-Também é válido lembrar que o conjunto de sentenças é enumerável.
+Quando não houver ambiguidade na leitura de uma fórmula, parênteses podem ser
+omitidos.
+
+Lógicas que envolvem vários agentes na lógica modal utilizam $n$ operadores, com
+$n \in \mathbb{N}$, como descrito acima, são chamadas de \emph{lógicas
+multimodais}. A lógica modal com um único agente, onde apenas temos os
+operadores $\pos{1}$ e $\nec{1}$ (ou simplesmente $\pos{}$ e $\nec{}$), isto é,
+onde $\Agents =\{1\}$, bem como a lógica proposicional clássica, onde $\Agents =
+\{\}$, são, portanto, casos especiais da lógica multimodal.
+
+O \emph{nível modal} de uma fórmula é o número máximo de ocorrências de
+operadores modais sob o qual a fórmula ocorre. Por exemplo, em
+$\nec{\agent}\pos{\agent}\mathbb{P}$, o nível modal de $\mathbb{P}$ é 2.
 
 \subsubsection{Convenções} 
 É importante definir algumas convenções para minimizar 
@@ -341,6 +343,68 @@ equivalente, $\varphi '$, na FND, é dada pelo seguinte procedimento:
 
 
 \subsection{Semântica}
+\label{semantics}
+
+A ideia geral do significado de fórmulas na lógica proposicional modal pode ser
+entendida, de forma simples, em termos de uma coleção de mundos possíveis, um conjunto
+de atribuições de valores booleanos para cada símbolo proposicional em cada
+mundo e relações de acessibilidade, que são definidas com base em um conjunto de
+agentes.
+
+Uma das estruturas mais estudadas em lógica modal corresponde à estrutura de
+Kripke. 
+
+\begin{definition}
+    Uma \textbf{estrutura de Kripke}, para o conjunto de símbolos proposicionais
+    $\mathcal{P}$ e o conjunto de agentes $\Agents = \{1,\ldots, n\}$, é
+    uma tupla $\mathcal{M} = (W, \st_0, R_1,\ldots, R_n, \pi)$, onde:
+   $W$ é um conjunto não-vazio de possíveis mundos; $\st_0 \in W$ é a raiz do modelo; 
+   $\forall\agent \in \Agents, R_\agent \subseteq W \times W$ e
+   $\pi : W \times \mathcal{P} \longrightarrow \{false, true\}$
+    
+\end{definition}
+
+A partir da definição de estrutura de Kripke, podemos definir a satisfatibilidade
+e a validade de uma fórmula.
+\begin{definition}
+    Seja $\mathcal{M} = (W, \st_0, R_1, \ldots, R_n, \pi)$ uma estrutura de Kripke sobre
+    $\mathcal{P}$ e $\Agents$, e considere $w \in W$, $\mathbb{P} \in \mathcal{P}$
+    e $\varphi$ e $\psi$ fórmulas bem formadas. A \textbf{relação de
+    satisfatibilidade}, denotada por $\models ^{\mathcal{M}}_{w} \varphi$, entre
+    o mundo $w$ e uma fórmula $\varphi$ no modelo $\mathcal{M}$, é definida
+    indutivamente como se segue:
+    \begin{itemize}
+        \item $\models ^{\mathcal{M}}_{w} \mathbb{P}$ se e somente se, $\pi(w,\mathbb{P}) =
+            true$;
+        %\item $\models ^{\mathcal{M}}_{w} true$ e $\not\models ^{\mathcal{M}}_{w} false$; Você não precisa disso. Falso e verdateiro são abreviações.
+        \item $\models ^{\mathcal{M}}_{w} \neg \varphi$ se e somente se,
+            $\not\models ^{\mathcal{M}}_{w} \varphi$
+            
+        \item $\models ^{\mathcal{M}}_{w} \varphi \vee \psi$ se e somente se,
+            $\models ^{\mathcal{M}}_{w} \varphi$ \texttt{ou} $\models
+            ^{\mathcal{M}}_{w} \psi$
+        \item $\models ^{\mathcal{M}}_{w} \nec{\agent} \varphi$ se e somente se,
+            $\forall~t \in W$ com $\agent \in \Agents$  e $(w,t) \in R_\agent$,
+            tem-se que $\models ^{\mathcal{M}}_{t} \varphi$. 
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    Seja $\varphi \in FBF_{K}$, dizemos que $\varphi$ é
+    \textbf{satisfatível} se existe um modelo $\mathcal{M}$ tal que $\models ^{\mathcal{M}}_{\st_0} \varphi$.  
+\end{definition}
+
+\begin{definition}
+    Seja $\varphi \in FBF_{K}$, dizemos que $\varphi$ é
+    \textbf{válida} se para todo modelo $\mathcal{M}$ temos que $\models ^{\mathcal{M}}_{\st_0} \varphi$.  
+\end{definition}
+
+Nós denotamos por $\depth(\st)$ o tamanho do caminho único entre $\st_0$ e  $\st$
+através da união das relações de acessibilidade em $\model{M}$. 
+Nós chamamos de \emph{camada modal} a classe de equivalência entre os mundos de
+mesma profundidade em um modelo.
+
+Observamos que verificar o problema de se verificar a satisfatibilidade de uma fórmula $\varphi$ em $\st_0$ pode ser reduzido ao problema de se checar a satisfatibilidade de todas as suas subfórmulas que ocorrem na camada modal de um modelo correspondente ao nível modal onde estas subfórmulas ocorrem (ver~\cite{Areces00tree-basedheuristics}). 
 
 \section{Modelos padrões para a lógica modal}
 \label{sec:modelos_padroes}
@@ -392,305 +456,305 @@ R da seguinte forma:
 \end{center}
 \end{table}
 
-\begin{figure}
-\begin{center}
-\label{figure:mundos_relacao}
-\begin{tikzpicture}[scale=2]
-    \begin{pgfonlayer}{nodelayer}
-        \node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
-        \node[style=newstyle] (1) at (-2, 1.4) {};
-        \node[style=newstyle] (2) at (-0.25, 1) {};
-        \node[style=newstyle] (4) at (-2, 0) {};
-        \node[style=rect2] (3) at (-2, 0.7) {M};
-    \end{pgfonlayer}
-\end{tikzpicture}
-\caption{Exemplo de modelo com relação}
-\end{center}
-\end{figure}
+%\begin{figure}
+%\begin{center}
+%\label{figure:mundos_relacao}
+%\begin{tikzpicture}[scale=2]
+    %\begin{pgfonlayer}{nodelayer}
+        %\node [style=newstyle] (0) at (-3.75, 1) {$\mathbb{P}_0$};
+        %\node[style=newstyle] (1) at (-2, 1.4) {};
+        %\node[style=newstyle] (2) at (-0.25, 1) {};
+        %\node[style=newstyle] (4) at (-2, 0) {};
+        %\node[style=rect2] (3) at (-2, 0.7) {M};
+    %\end{pgfonlayer}
+%\end{tikzpicture}
+%\caption{Exemplo de modelo com relação}
+%\end{center}
+%\end{figure}
 
 
 \subsection{Sistemas de lógica modal}
-\label{sec:sistemas}
+\label{sistemas}
 
-\subsubsection{Sistema $S5$}
+%\subsubsection{Sistema $S5$}
 
-Nesta seção vamos examinar a necessidade e a possibilidade em $S5$ de um ponto
-de vista axiomático. Começamos com uma axiomatização baseada nos princípios das
-seções anteriores, ou seja, adotaremos como axiomas, ou teoremas básicos,
-quaisquer sentenças das seguintes formas:
+%Nesta seção vamos examinar a necessidade e a possibilidade em $S5$ de um ponto
+%de vista axiomático. Começamos com uma axiomatização baseada nos princípios das
+%seções anteriores, ou seja, adotaremos como axiomas, ou teoremas básicos,
+%quaisquer sentenças das seguintes formas:
 
-\begin{align}
-    T.& \\
-    5.& \\
-    K.& \\
-    Df\Diamond.& \\
-    PL.& 
-\end{align}
+%\begin{align}
+    %T.& \\
+    %5.& \\
+    %K.& \\
+    %Df\Diamond.& \\
+    %PL.& 
+%\end{align}
 
-E assumimos as seguintes regras de inferência:
+%E assumimos as seguintes regras de inferência:
 
-\begin{mathpar}
-\label{natrules1}
-(RN)~\inferrule{A}{\Box~A} 
-\end{mathpar}
+%\begin{mathpar}
+%\label{natrules1}
+%(RN)~\inferrule{A}{\Box~A} 
+%\end{mathpar}
 
-\begin{mathpar}
-\label{natrules1}
-(MP)~\inferrule{A \rightarrow~B, A}{B} 
-\end{mathpar}
+%\begin{mathpar}
+%\label{natrules1}
+%(MP)~\inferrule{A \rightarrow~B, A}{B} 
+%\end{mathpar}
 
-Por teorema, geralmente, queremos dizer qualquer sentença que possa ser provada
-com base nos axiomas e nas regras de inferência e denotamos como $\vdash A$ para
-dizer que a sentença $A$ é também um teorema.
+%Por teorema, geralmente, queremos dizer qualquer sentença que possa ser provada
+%com base nos axiomas e nas regras de inferência e denotamos como $\vdash A$ para
+%dizer que a sentença $A$ é também um teorema.
 
-Podemos observar que $S5$, aqui formulado como um sistema dedutivo, inclui a
-lógica proposicional, ou seja, a seguinte regra de inferência pode ser derivada
-de dentro do sistema:
+%Podemos observar que $S5$, aqui formulado como um sistema dedutivo, inclui a
+%lógica proposicional, ou seja, a seguinte regra de inferência pode ser derivada
+%de dentro do sistema:
 
-\begin{mathpar}
-\label{natrules1}
-(RPL)~\inferrule{A_1, \ldots, A_n}{A}~(n \geq~0) 
-\end{mathpar}
+%\begin{mathpar}
+%\label{natrules1}
+%(RPL)~\inferrule{A_1, \ldots, A_n}{A}~(n \geq~0) 
+%\end{mathpar}
 
-Para provarmos tal regra, mostramos que se a inferência de $A_1, \ldots, A_n$
-para $A$ é proposicionalmente correta, e cada um dos $A_1, \ldots, A_n$ é um
-teorema, então $A$ também é um teorema. A suposição de que a inferência é
-proposicionalmente correta implica que $A$ é verdadeiro em qualquer validação
-onde cada um dos $A_1, \ldots, A_n$ é verdadeiro, o que basicamente expressa que
-a sentença
-\begin{equation}
-    A_1 \rightarrow (\ldots(A_n \rightarrow A) \ldots)
-\end{equation}
-é uma tautologia (PL), ou seja, um teorema. Aplicamos a regra (MP) $n$ vezes, e
-concluímos que $A$ também é um teorema.
+%Para provarmos tal regra, mostramos que se a inferência de $A_1, \ldots, A_n$
+%para $A$ é proposicionalmente correta, e cada um dos $A_1, \ldots, A_n$ é um
+%teorema, então $A$ também é um teorema. A suposição de que a inferência é
+%proposicionalmente correta implica que $A$ é verdadeiro em qualquer validação
+%onde cada um dos $A_1, \ldots, A_n$ é verdadeiro, o que basicamente expressa que
+%a sentença
+%\begin{equation}
+    %A_1 \rightarrow (\ldots(A_n \rightarrow A) \ldots)
+%\end{equation}
+%é uma tautologia (PL), ou seja, um teorema. Aplicamos a regra (MP) $n$ vezes, e
+%concluímos que $A$ também é um teorema.
 
-Utilizamos o sistema $S5$ para ilustrar alguns conceitos iniciais de prova e
-regras de inferência. A seguir, iremos mostrar como aplicá-los a sistemas mais
-complexos da lógica modal.
+%Utilizamos o sistema $S5$ para ilustrar alguns conceitos iniciais de prova e
+%regras de inferência. A seguir, iremos mostrar como aplicá-los a sistemas mais
+%complexos da lógica modal.
 
-\subsubsection{Outros sistemas}
-\label{ssub:Outrossistemas}
+%\subsubsection{Outros sistemas}
+%\label{ssub:Outrossistemas}
 
-Os diferentes sistemas de lógica modal surgem em parte pela necessidade em diferentes
-tipos de aplicações e em parte porque nossas intuições sobre o que é necessariamente
-verdade ainda não estão completamente desenvolvidas. Originalmente, lógicas
-modais diferentes eram caracterizadas por conjuntos de axiomas distintos. 
+%Os diferentes sistemas de lógica modal surgem em parte pela necessidade em diferentes
+%tipos de aplicações e em parte porque nossas intuições sobre o que é necessariamente
+%verdade ainda não estão completamente desenvolvidas. Originalmente, lógicas
+%modais diferentes eram caracterizadas por conjuntos de axiomas distintos. 
 
-Definimos sistemas de lógica modal em termos do fecho sobre a regra de
-inferência (RPL), onde $A$ é uma consequência tautológica das sentenças $A_1,
-\ldots, A_n$.
+%Definimos sistemas de lógica modal em termos do fecho sobre a regra de
+%inferência (RPL), onde $A$ é uma consequência tautológica das sentenças $A_1,
+%\ldots, A_n$.
 
-\begin{definition}[Sistema de lógica modal]
-   Um conjunto de sentenças é um \textit{sistema de lógica modal} se, e somente
-   se, é fechado sobre (RPL).
-\end{definition}
+%\begin{definition}[Sistema de lógica modal]
+   %Um conjunto de sentenças é um \textit{sistema de lógica modal} se, e somente
+   %se, é fechado sobre (RPL).
+%\end{definition}
 
-Assim, um sistema de lógica modal é qualquer conjunto de sentenças fechado com
-respeito a todos os modos proposicionalmente corretos de inferência.
-Reservaremos a notação $\Sigma$ como uma variável para conjuntos de sequências
-que são sistemas de lógica modal, e, para simplicidade, constantemente iremos
-nos referir aos mesmos simplesmente como sistemas.
+%Assim, um sistema de lógica modal é qualquer conjunto de sentenças fechado com
+%respeito a todos os modos proposicionalmente corretos de inferência.
+%Reservaremos a notação $\Sigma$ como uma variável para conjuntos de sequências
+%que são sistemas de lógica modal, e, para simplicidade, constantemente iremos
+%nos referir aos mesmos simplesmente como sistemas.
 
-Os teoremas em um sistema são simplesmente as sentenças que o mesmo contém.
-Escrevemos $\vdash_{\Sigma} A$ quando $A$ é um teorema de $\Sigma$.
+%Os teoremas em um sistema são simplesmente as sentenças que o mesmo contém.
+%Escrevemos $\vdash_{\Sigma} A$ quando $A$ é um teorema de $\Sigma$.
 
-\begin{definition}[Teorema em sistemas modais]
-    $\vdash_{\Sigma} A$ se, e somente se $A \in \Sigma$.
-\end{definition}
+%\begin{definition}[Teorema em sistemas modais]
+    %$\vdash_{\Sigma} A$ se, e somente se $A \in \Sigma$.
+%\end{definition}
 
-Como sistemas são simplesmente conjuntos de sentenças, a força de um sistema é medido em
-termos de inclusão: um sistema é pelo menos tão forte quanto um sistema $\Sigma$
---- e denotaremos como um $\Sigma$-sistema --- somente no cso em que contém todo
-e qualquer teorema de $\Sigma$ (note que esta relação é reflexiva).
+%Como sistemas são simplesmente conjuntos de sentenças, a força de um sistema é medido em
+%termos de inclusão: um sistema é pelo menos tão forte quanto um sistema $\Sigma$
+%--- e denotaremos como um $\Sigma$-sistema --- somente no cso em que contém todo
+%e qualquer teorema de $\Sigma$ (note que esta relação é reflexiva).
 
-\begin{theorem}
-    O conjunto de tautologias é definido a partir do axioma PL, definido na
-    seção anterior.\\
-    (1) PL é um sistema de lógica modal. \\
-    (2) Todo sistema de lógica modal é um PL-sistema. \\
-    (3) PL é o menor sistema de lógica modal.
-\end{theorem}
-Demonstração. $\qed$
+%\begin{theorem}
+    %O conjunto de tautologias é definido a partir do axioma PL, definido na
+    %seção anterior.\\
+    %(1) PL é um sistema de lógica modal. \\
+    %(2) Todo sistema de lógica modal é um PL-sistema. \\
+    %(3) PL é o menor sistema de lógica modal.
+%\end{theorem}
+%Demonstração. $\qed$
 
-Podemos definir noções de \textit{dedutibilidade} e \textit{consistência}, em
-termos de teoremicidade. 
+%Podemos definir noções de \textit{dedutibilidade} e \textit{consistência}, em
+%termos de teoremicidade. 
 
-Uma sentença $A$ é dedutível de um conjunto de
-sentenças $\Gamma$ e um sistema $\Sigma$ --- e escrevemos $\Gamma
-\vdash_{\Sigma} A$ --- se, e somente se, $\Sigma$ contém um teorema da forma:
-\begin{equation}
-    (A_1 \wedge \ldots \wedge A_n) \rightarrow A
-\end{equation}
-onde cada $A_i~(i=1,\ldots,n)$ dos antecedentes é uma sentença em $\Gamma$.
+%Uma sentença $A$ é dedutível de um conjunto de
+%sentenças $\Gamma$ e um sistema $\Sigma$ --- e escrevemos $\Gamma
+%\vdash_{\Sigma} A$ --- se, e somente se, $\Sigma$ contém um teorema da forma:
+%\begin{equation}
+    %(A_1 \wedge \ldots \wedge A_n) \rightarrow A
+%\end{equation}
+%onde cada $A_i~(i=1,\ldots,n)$ dos antecedentes é uma sentença em $\Gamma$.
 
-Um conjunto de sentenças $\Gamma$ é consistente em $\Sigma$ --- e escrevemos
-$Con_{\Sigma}\Gamma$ --- somente no caso em que a sentença $\bot$ não é
-$\Sigma$-dedutível a partir de $\Gamma$.
+%Um conjunto de sentenças $\Gamma$ é consistente em $\Sigma$ --- e escrevemos
+%$Con_{\Sigma}\Gamma$ --- somente no caso em que a sentença $\bot$ não é
+%$\Sigma$-dedutível a partir de $\Gamma$.
 
-Mais formalmente:
+%Mais formalmente:
 
-\begin{definition}[Dedutibilidade]
+%\begin{definition}[Dedutibilidade]
     
-\end{definition}
+%\end{definition}
 
-\begin{definition}[Consistência]
+%\begin{definition}[Consistência]
     
-\end{definition}
+%\end{definition}
 
-Teoremicidade, dedutibilidade e consistência, como definitos, possuem todas as
-propriedades esperadas, algunas das quais estão enumeradas no seguinte teorema.
+%Teoremicidade, dedutibilidade e consistência, como definitos, possuem todas as
+%propriedades esperadas, algunas das quais estão enumeradas no seguinte teorema.
 
-\begin{theorem} ~
-    \begin{enumerate}
-        \item $\vdash_{\Sigma}A\ sse\ \emptyset \vdash_{\Sigma}A$
-        \item $\vdash_{\Sigma}A\ sse\ \forall \Gamma, \Gamma \vdash_{\Sigma}A$
-        \item $Se\ \Gamma \vdash_{PL}A\ entao\ \Gamma \vdash_{\Sigma}A$
-        \item $Se\ A\in \Gamma\ entao\ \Gamma \vdash_{\Sigma}A$ \item $Se\ \Gamma
-            \vdash_{\Sigma}B\ e\ \{B\}\vdash_{\Sigma}A\ entao\ \Gamma
-            \vdash_{\Sigma}A$
-        \item $Se\ \Gamma \vdash_{\Sigma}A\ e \Gamma \in \Delta\ entao\ \Delta
-            \vdash_{\Sigma} A$
-        \item $\Gamma \vdash_{\Sigma}A\ sse\ existe\ um\ subconjunto\ finito\ 
-            \Delta\ de\ \Gamma\ tal\ que\ \Delta \vdash_{\Sigma}A$
-        \item $\Gamma \vdash_{\Sigma}A\rightarrow B\ sse \Gamma \vdash_{\Sigma}A$
-        \item $Con_{\Sigma}\ \Gamma\ sse\ existe\ um\ A\ tal\ que\ \neg \Gamma \vdash_{\Sigma}A$
-        \item $Con_{\Sigma}\ \Gamma\ sse\ nao\ existe\ A\ tal\ que\ ambos\ \Gamma
-            \vdash_{\Sigma}A \Gamma \vdash_{\Sigma}\neg A$
-        \item $Se\ Con_{\Sigma}\ \Gamma\ entao\ Con_{PL}\Gamma$
-        \item $Se\ Con_{\Sigma}\ e\ \Delta \in \Gamma\ entao\ Con_{\Delta}$
-        \item $Con_{\Sigma}\ \Gamma\ sse\ \forall \Delta \in \Gamma,
-            Con_{\Sigma}\Delta$
-        \item $\Gamma \vdash_{\Sigma}A\ sse\ Con\{\neg A\}$
-        \item $Con_{\Sigma}\Gamma \{A\}\ sse\ \neg \Gamma \vdash_{\Sigma}\neg A$
-    \end{enumerate}
-\end{theorem}
+%\begin{theorem} ~
+    %\begin{enumerate}
+        %\item $\vdash_{\Sigma}A\ sse\ \emptyset \vdash_{\Sigma}A$
+        %\item $\vdash_{\Sigma}A\ sse\ \forall \Gamma, \Gamma \vdash_{\Sigma}A$
+        %\item $Se\ \Gamma \vdash_{PL}A\ entao\ \Gamma \vdash_{\Sigma}A$
+        %\item $Se\ A\in \Gamma\ entao\ \Gamma \vdash_{\Sigma}A$ \item $Se\ \Gamma
+            %\vdash_{\Sigma}B\ e\ \{B\}\vdash_{\Sigma}A\ entao\ \Gamma
+            %\vdash_{\Sigma}A$
+        %\item $Se\ \Gamma \vdash_{\Sigma}A\ e \Gamma \in \Delta\ entao\ \Delta
+            %\vdash_{\Sigma} A$
+        %\item $\Gamma \vdash_{\Sigma}A\ sse\ existe\ um\ subconjunto\ finito\ 
+            %\Delta\ de\ \Gamma\ tal\ que\ \Delta \vdash_{\Sigma}A$
+        %\item $\Gamma \vdash_{\Sigma}A\rightarrow B\ sse \Gamma \vdash_{\Sigma}A$
+        %\item $Con_{\Sigma}\ \Gamma\ sse\ existe\ um\ A\ tal\ que\ \neg \Gamma \vdash_{\Sigma}A$
+        %\item $Con_{\Sigma}\ \Gamma\ sse\ nao\ existe\ A\ tal\ que\ ambos\ \Gamma
+            %\vdash_{\Sigma}A \Gamma \vdash_{\Sigma}\neg A$
+        %\item $Se\ Con_{\Sigma}\ \Gamma\ entao\ Con_{PL}\Gamma$
+        %\item $Se\ Con_{\Sigma}\ e\ \Delta \in \Gamma\ entao\ Con_{\Delta}$
+        %\item $Con_{\Sigma}\ \Gamma\ sse\ \forall \Delta \in \Gamma,
+            %Con_{\Sigma}\Delta$
+        %\item $\Gamma \vdash_{\Sigma}A\ sse\ Con\{\neg A\}$
+        %\item $Con_{\Sigma}\Gamma \{A\}\ sse\ \neg \Gamma \vdash_{\Sigma}\neg A$
+    %\end{enumerate}
+%\end{theorem}
 
-Demonstração. $\qed$
+%Demonstração. $\qed$
 
-Iremos agora introduzir um conjunto dos sistemas mais conhecidos da lógica
-modal: $K$, $D$, $T$, $B$, $K4$, $S4$ além de retomarmos brevemente sobre o
-sistema $S5$ mencionado anteriormente. A definição destes sistemas utiliza a
-semântica de possíveis mundos.
+%Iremos agora introduzir um conjunto dos sistemas mais conhecidos da lógica
+%modal: $K$, $D$, $T$, $B$, $K4$, $S4$ além de retomarmos brevemente sobre o
+%sistema $S5$ mencionado anteriormente. A definição destes sistemas utiliza a
+%semântica de possíveis mundos.
 
-\begin{definition}[$L$-Válida]
-    Dizemos que o modelo $\mathcal{M} = <W, R, P>$ é baseado no quadro $<W,R>$.
-    Umafórmula $X$ é válida no modelo $\mathcal{M}$ se é verdadeira em todo
-    mundo de $W$. Uma fórmula $X$ é válida em um quadro se é válida em cada
-    modelo baseado naquele quadro. Finalmente, se $L$ é uma coleção de quadros,
-    $X$ é $L$-válida se $X$ é válida em cada quadro em $L$.
-\end{definition}
+%\begin{definition}[$L$-Válida]
+    %Dizemos que o modelo $\mathcal{M} = <W, R, P>$ é baseado no quadro $<W,R>$.
+    %Umafórmula $X$ é válida no modelo $\mathcal{M}$ se é verdadeira em todo
+    %mundo de $W$. Uma fórmula $X$ é válida em um quadro se é válida em cada
+    %modelo baseado naquele quadro. Finalmente, se $L$ é uma coleção de quadros,
+    %$X$ é $L$-válida se $X$ é válida em cada quadro em $L$.
+%\end{definition}
 
-Diferentes sistemas de lógica modal são caracterizados semanticamente como as
-fórmulas $L$-válidas, para $L$ classes em particular de quadros. Para
-exemplificar, o sistema chamado $T$ é caracterizado pela classe de quadros que
-contenham a propriedade de que todo mundo é acessível por ele mesmo. Este tipo
-de propriedade pode vir a ser útil posteriormente e está definida a seguir,
-junto com outras propriedades de valor similar.
+%Diferentes sistemas de lógica modal são caracterizados semanticamente como as
+%fórmulas $L$-válidas, para $L$ classes em particular de quadros. Para
+%exemplificar, o sistema chamado $T$ é caracterizado pela classe de quadros que
+%contenham a propriedade de que todo mundo é acessível por ele mesmo. Este tipo
+%de propriedade pode vir a ser útil posteriormente e está definida a seguir,
+%junto com outras propriedades de valor similar.
 
-\begin{definition}
-    Seja $Q = <W,R>$ um quadro. Dizemos que $Q$ é:
-    \begin{enumerate}
-        \item \textit{reflexivo}
-        \item \textit{simétrico}
-        \item \textit{transitivo}
-        \item \textit{serial}
-        \item \textit{euclidiano}
-    \end{enumerate}
+%\begin{definition}
+    %Seja $Q = <W,R>$ um quadro. Dizemos que $Q$ é:
+    %\begin{enumerate}
+        %\item \textit{reflexivo}
+        %\item \textit{simétrico}
+        %\item \textit{transitivo}
+        %\item \textit{serial}
+        %\item \textit{euclidiano}
+    %\end{enumerate}
     
-\end{definition}
+%\end{definition}
 
-O sistema $T$, mencionado acima, é caracterizado pela classe de quadros
-reflexivos. A Tabela~\ref{table:condicoes_quadro} informa as classes de quadros
-aos quais os demais sistemas são caracterizados.
+%O sistema $T$, mencionado acima, é caracterizado pela classe de quadros
+%reflexivos. A Tabela~\ref{table:condicoes_quadro} informa as classes de quadros
+%aos quais os demais sistemas são caracterizados.
 
-\begin{table}[h!]
-    \begin{center}
-        \label{table:condicoes_quadro}
-        \caption{Alguns sistemas padrões de lógica modal}
-        \begin{tabular}{ll}
-            \hline
-            Sistema & condições para classe de quadros \\
-            \hline
-            $K$  & sem condições \\  
-            $D$  & serial \\ 
-            $T$  & reflexivo \\ 
-            $B$  & reflexivo, simétrico\\ 
-            $K4$ & transitivo \\  
-            $S4$ & reflexivo, transitivo \\  
-            $S5$ & reflexivo, simétrico, transitivo \\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
+%\begin{table}[h!]
+    %\begin{center}
+        %\label{table:condicoes_quadro}
+        %\caption{Alguns sistemas padrões de lógica modal}
+        %\begin{tabular}{ll}
+            %\hline
+            %Sistema & condições para classe de quadros \\
+            %\hline
+            %$K$  & sem condições \\  
+            %$D$  & serial \\ 
+            %$T$  & reflexivo \\ 
+            %$B$  & reflexivo, simétrico\\ 
+            %$K4$ & transitivo \\  
+            %$S4$ & reflexivo, transitivo \\  
+            %$S5$ & reflexivo, simétrico, transitivo \\
+            %\hline
+        %\end{tabular}
+    %\end{center}
+%\end{table}
 
-A figura~\ref{fig:subsistemas} mostra como os sistemas de lógica modal
-mencionados nesta seção estão
-relacionados entre si, ou seja, se existe uma seta partindo de $L$ e chegando em $J$, sendo $L$ e
-$J$ sistemas, podemos dizer que $J$ é um $L$-sistema.
+%A figura~\ref{fig:subsistemas} mostra como os sistemas de lógica modal
+%mencionados nesta seção estão
+%relacionados entre si, ou seja, se existe uma seta partindo de $L$ e chegando em $J$, sendo $L$ e
+%$J$ sistemas, podemos dizer que $J$ é um $L$-sistema.
 
-\begin{figure}
-\label{fig:subsistemas}
-\begin{center}
-\begin{tikzpicture}
-    \begin{pgfonlayer}{nodelayer}
-        \node  (0) at (0, 2) {S5};
-        \node  (1) at (-2, 0.7) {B};
-        \node  (2) at (2, 0.7) {S4};
-        \node  (3) at (-2, -0.6) {T};
-        \node  (4) at (-2, -1.8) {D};
-        \node  (5) at (2, -1) {K4};
-        \node  (6) at (0, -2.7) {K};
-        \path[->,thick] (1) edge node {} (0)
-        (2) edge node {} (0)
-        (3) edge node {} (1)
-        (5) edge node {} (2)
-        (3) edge node {} (2)
-        (4) edge node {} (3)
-        (6) edge node {} (4)
-        (6) edge node {} (5);
+%%\begin{figure}
+%%\label{fig:subsistemas}
+%%\begin{center}
+%%\begin{tikzpicture}
+    %%\begin{pgfonlayer}{nodelayer}
+        %%\node  (0) at (0, 2) {S5};
+        %%\node  (1) at (-2, 0.7) {B};
+        %%\node  (2) at (2, 0.7) {S4};
+        %%\node  (3) at (-2, -0.6) {T};
+        %%\node  (4) at (-2, -1.8) {D};
+        %%\node  (5) at (2, -1) {K4};
+        %%\node  (6) at (0, -2.7) {K};
+        %%\path[->,thick] (1) edge node {} (0)
+        %%(2) edge node {} (0)
+        %%(3) edge node {} (1)
+        %%(5) edge node {} (2)
+        %%(3) edge node {} (2)
+        %%(4) edge node {} (3)
+        %%(6) edge node {} (4)
+        %%(6) edge node {} (5);
 
-    \end{pgfonlayer}
-\end{tikzpicture}
-\end{center}
-\caption{Subsistemas}
-\end{figure}
+    %%\end{pgfonlayer}
+%%\end{tikzpicture}
+%%\end{center}
+%%\caption{Subsistemas}
+%%\end{figure}
 
-\subsection{Lógica Multimodal}
-\label{sub:lógica_multimodal}
+%\subsection{Lógica Multimodal}
+%\label{sub:lógica_multimodal}
 
 
-\subsubsection{Estrutura de Kripke}
+%\subsubsection{Estrutura de Kripke}
 
-Uma das estruturas mais estudadas em lógica modal corresponde à estrutura de
-Kripke. Uma estrutura de Kripke para $P$ e $A_n = \{1, \ldots, n\}$ é dada da seguinte forma:
-\begin{equation}
-\mathbb{M} = <W,\ R_1, \ldots,\ R_n, \pi>
-\end{equation}
-onde:
-\begin{itemize}
-    \item $W$ é um conjunto não-vazio de possíveis mundos
-    \item para todo $a \in A_n, R_a \subseteq W \times W$
-    \item $\pi: W \times P \longrightarrow \{Falso, Verdadeiro\}$
-\end{itemize}
+%Uma das estruturas mais estudadas em lógica modal corresponde à estrutura de
+%Kripke. Uma estrutura de Kripke para $P$ e $A_n = \{1, \ldots, n\}$ é dada da seguinte forma:
+%\begin{equation}
+%\mathbb{M} = <W,\ R_1, \ldots,\ R_n, \pi>
+%\end{equation}
+%onde:
+%\begin{itemize}
+    %\item $W$ é um conjunto não-vazio de possíveis mundos
+    %\item para todo $a \in A_n, R_a \subseteq W \times W$
+    %\item $\pi: W \times P \longrightarrow \{Falso, Verdadeiro\}$
+%\end{itemize}
 
-\begin{figure}
-\label{fig:kripke}
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{pgfonlayer}{nodelayer}
-                \node [style=bolinha] (0) at (0, 2) {};
-                \node [style=bolinha] (1) at (-2, -1) {};
-                \node [style=bolinha] (2) at (2, -1) {};
-                \path[->] (0) edge node {} (0)
-                (1) edge node {} (1)
-                (2) edge node {} (2);
-                \path[<->] (0) edge node {} (1)
-                (0) edge node {} (2);
-            \end{pgfonlayer}
-        \end{tikzpicture}
-    \end{center}
-    \caption{Estrutura de Kripke}
-\end{figure}
+%%\begin{figure}
+%%\label{fig:kripke}
+    %%\begin{center}
+        %%\begin{tikzpicture}
+            %%\begin{pgfonlayer}{nodelayer}
+                %%\node [style=bolinha] (0) at (0, 2) {};
+                %%\node [style=bolinha] (1) at (-2, -1) {};
+                %%\node [style=bolinha] (2) at (2, -1) {};
+                %%\path[->] (0) edge node {} (0)
+                %%(1) edge node {} (1)
+                %%(2) edge node {} (2);
+                %%\path[<->] (0) edge node {} (1)
+                %%(0) edge node {} (2);
+            %%\end{pgfonlayer}
+        %%\end{tikzpicture}
+    %%\end{center}
+    %%\caption{Estrutura de Kripke}
+%%\end{figure}
 
 
 \section{Resolução}
@@ -734,260 +798,181 @@ Seção~\ref{sub:tableaux}.
 
 
 \subsection{Resolução Clausal}
-Resolução clausal é um procecimento refutacional: para podermos provar a
-sentença $\varphi$, nós transformamos a negação de $\varphi$ na Forma Normal
-Conjuntiva antes de aplicar a única regra de inferência definida para este tipo
-de prova.
+\label{clausal}
 
-\begin{definition}[RES]
-\begin{mathpar}
-\label{res}
-\inferrule{(\varphi \vee \gamma) \\ (\psi \vee \neg \gamma)}{(\varphi \vee \psi)}
-\end{mathpar}
-\end{definition}
+Este método de prova é conhecido como um procedimento refutacional: para
+podermos provar a fórmula $\varphi$, nós transformamos a sua negação ($\neg
+\varphi)$ na Forma Normal, para, então, aplicarmos as regras de inferência ao
+conjunto de cláusulas resultante com a finalidade de gerar a cláusula vazia, que
+indicará uma contradição no conjunto de cláusulas, provando a fórmula original. 
+
+Existe uma forma normal específica para a lógica modal $K$, a Forma Normal
+Separada para Sistemas Normais baseada em Níveis Modais \snf{K}, que faz com
+que os contextos referentes aos diferentes agentes sejam separados. As regras de
+transformação e a prova de correção do método de tradução para $\snf{K}$ podem
+ser encontrados em~\cite{DBLP:conf/tableaux/NalonHD15}. Uma fórmula em $\snf{K}$
+é representada por um conjunto de cláusulas, que são verdadeiras em todos os
+mundos alcançáveis.  Uma fórmula em $\snf{K}$ possui o seguinte formato:
+\begin{equation} \bigwedge_i ml: C_i \end{equation} onde cada $C_i$ é uma
+    cláusula e $ml$ é o nível modal onde a cláusula ocorre.
+
+As seguintes definições também são necessárias:
+
+\begin{definition} \textit{Literal} é um símbolo proposicional $\mathbb{P}$ ou
+sua negação $\neg \mathbb{P}$. Denotamos por $\cal{L}$ o conjunto de todos os
+literais.  \end{definition}
+
+\begin{definition} Um \textit{literal modal} é uma fórmula na forma
+$\nec{\agent} l$ ou sua negação $\neg \nec{\agent} l$, sendo $l$ um literal e
+com $\agent \in \Agents$.  \end{definition}
+
+Uma cláusula pode assumir um dos seguintes formatos:
+
+\begin{itemize} \item Uma cláusula de literais:
+
+        \begin{center} $ml: \bigvee^r_{b=1} l_b$ \end{center} \item Uma cláusula
+                $\agent$-positiva:
+
+        \begin{center} $ml: l' \Rightarrow \nec{\agent} l$ \end{center} \item
+                Uma cláusula $\agent$-negativa:
+
+        \begin{center} $ml: l' \Rightarrow \neg \nec{\agent} l$ \end{center}
+    \end{itemize} onde $l$, $l'$ e $l_b \in \mathcal{L}$, $\agent \in \Agents$,
+    $r \in \mathbb{N}$ e $ml \in \Nat$.
+
+Uma vez que as fórmulas estejam em sua forma normal, o método de resolução pode
+ser aplicado, ou seja, as regras de inferência podem ser aplicadas ao conjunto
+de cláusulas resultante. Nós omitiremos a descrição do método, que pode ser
+encontrada em \cite{DBLP:conf/tableaux/NalonHD15}, uma vez que para os objetivos
+deste trabalho precisamos tão somente da definição da forma normal apresentada
+acima.
 
 \subsection{Tableaux}
 \label{sub:tableaux}
-Métodos de demonstração utilizando tableaux são frequentemente utilizados,
-com sucesso, em lógica modal para prover decisões de procedimento.
+Métodos de demonstração utilizando tableaux são frequentemente utilizados, com
+sucesso, em lógica modal para prover procedimentos de decisão. O tableaux
+consiste em uma prova representada graficamente na forma de árvore. É um método
+analítico baseado na prova por contradição~\cite{fit:tableaux}.
 
-O tableaux consiste em uma prova representada graficamente na forma de árvore. É
-um método analítico baseado na prova por contradição~\cite{fit:tableaux}.
+\begin{definition}
+    Uma \textbf{regra $\sigma$} no método tableaux consiste em um numerador $N$,
+    acima da linha, e uma lista (finita) de denominadores $D_1, D_2,
+    \ldots, D_k$ (abaixo da linha), separados por barras verticais. O numerador e
+    cada denominador são um conjunto finito de fórmulas~\cite{tableaux:def}.
+\end{definition}
+ 
+Cada regra é lida de cima para baixo, e se o numerador é satisfatível,
+então um dos denominadores também o é. O numerador de cada regra do
+tableaux contém uma ou mais fórmulas distintas chamadas de \textit{fórmula(s)
+principal(is)}. Um \textit{cálculo baseado em tableaux} para uma lógica $L$ ($\mathcal{C}_L$) 
+é um conjunto finito de regras~\cite{clausal_tableaux}.
 
-\begin{figure}
-\begin{center}
-\label{figure:tree_tableaux}
-\begin{tikzpicture}[scale=2]
-    \begin{pgfonlayer}{nodelayer}
-        \node[style=quarequare] (0) at  (0, 2) {A};
-        \node[style=quarequare] (1) at  (-1, 1) {B};
-        \node[style=quarequare] (2) at  (1, 1)  {C};
-        \node[style=quarequare] (3) at  (-1, -0)  {D};
-        \node[style=quarequare] (4) at  (-1, -1)  {E};
-        \node[style=quarequare] (5) at  (-1.5, -2) {F};
-        \node[style=quarequare] (6) at  (-0.5, -2) {G};
-        \node[style=quarequare] (7) at  (0.5, -0) {H};
-        \node[style=quarequare] (8) at  (1.5, -0) {I};
-        \node[style=quarequare] (9) at  (1.5, -1) {J};
-        \path[-] (0) edge node {} (2)
-        (0) edge node {} (1)
-        (1) edge node {} (3)
-        (3) edge node {} (4)
-        (4) edge node {} (5)
-        (4) edge node {} (6)
-        (2) edge node {} (7)
-        (2) edge node {} (8)
-        (8) edge node {} (9);
-    \end{pgfonlayer}
-\end{tikzpicture}
-\caption{Exemplo lógica modal}
-\end{center}
-\end{figure}
+Dado um $\mathcal{C}_L$, um tableaux para uma fórmula $\varphi$ é uma árvore tal
+que sua raiz contém $\varphi$ e os outros nós contém conjuntos finitos de
+fórmulas obtidas a partir de seus nós-pais, através da ativação de uma regra de
+$\mathcal{C}_L$. Um \textit{ramo}, em um tableaux, representa um caminho entre a
+raiz da árvore e um de seus nós. %% você não precisa de regra de blocking para
+K; o artigo que você leu, do Goré, é para combinações envolvendo 4.
 
-Na Figura~\ref{figura:tree_tableaux}, os quadrados são chamados \textit{nós},
-que, no \textit{tableaux}, representam as fórmulas pré-fixadas, definidas a
-seguir. O nó \texttt{A} é o nó \textit{raiz} e os nós \texttt{F, F, H} e
-\texttt{J} são o que chamamos de \textit{folhas}. O nó \texttt{A} possui dois
-\textit{filhos}, \texttt{B} e \texttt{C}, com \texttt{B} sendo o filho da
-esquerda e \texttt{C} o filho da direita. Se um nó é filho de outro nó, o
-segundo é chamado \textit{pai} do primeiro --- por exemplo, \texttt{C} é o pai
-de \texttt{H} e de \texttt{I}.
-A sequência A, B, D, E é um exemplo de \textit{caminho}. Outro exemplo de
-caminho é a sequência A, B, D, E, F, que também chamado de \textit{ramo}, que
-corresponde a um caminho máximo.
-
-\begin{definition}[Prefixo]
-   Um prefixo é uma sequência finita de inteiros positivos. Uma \textit{fórmula
-   prefixada} é uma expressão da forma $\sigma X$, onde $\sigma$ é um prefixo e
-   $X$ é uma fórmula.
+\begin{definition}
+Seja $\Delta$ um conjunto de regras de tableaux. Dizemos que $\psi$ é
+\textbf{obtível a partir de} $\varphi$ por aplicações de regras em $\Delta$ se existe
+um tableaux para $\varphi$, que utiliza somente as regras contidas em $\Delta$, e possui
+um nó que contém $\psi$. 
 \end{definition}
 
-Escrevemos prefixos usando pontos para separar os inteiros, por exemplo:
-1.2.3.2.1.
-Também, se $\sigma$ é um prefixo e $n$ é um inteiro positivo, $\sigma.n$ é um
-prefixo.
-
-A ideia intuitiva é que um prefixo $\sigma$ nomeia um possível mundo em algum
-modelo, e $\sigma X$ nos diz que $X$ é verdadeiro no mundo que $\sigma$
-representa. Nossa intenção é que $\sigma.n$ deve sempre representar um mundo que
-é acessível daquele que $\sigma$ representa. Outros fatos sobre os prefixos
-dependem em qual lógica modal se está considerando. Estes serão abordados mais a
-frente.
-
-Uma tentativa de construção de prova por tableaux para uma fórmula $Z$ começa
-inicializando a árvore de prova com $1 \neg Z$ como raiz, ou seja, afirmamos que
-$Z$ não ocorre (não é verdadeiro) em um possível modelo no mundo representado
-por $1$. Em seguida, ramos são construídos de acordo com certas \textit{Regras
-de Extensão}, definidas em breve. Finalmente, é necessário que cada ramo esteja
-\textit{fechado}, definição que será dada após as regras de construção dos
-ramos.
-
-\begin{definition}[Regras Conjuntivas]
-    Para qualquer prefixo $\sigma$:
-    \begin{mathpar}
-\label{conj_rules}
-        \inferrule{\sigma~X\wedge Y}{\sigma~X \quad \sigma~Y} \qquad
-        \inferrule{\sigma~\neg(X\vee Y)}{\sigma~\neg X \quad \sigma~\neg Y} \\
-        \inferrule{\sigma~\neg(X\rightarrow Y)}{\sigma~X \quad \sigma~\neg Y}
-        \qquad
-        \inferrule{\sigma~X\leftrightarrow Y}{\sigma~X \rightarrow\ Y \\ 
-        \sigma~Y\rightarrow X}
-    \end{mathpar}
+\begin{definition}
+    Um ramo em um tableaux é dito \textbf{fechado} se seu nó final
+    contém apenas $\bot$. Um tableaux é dito \textbf{fechado} se cada um de seus
+    \textit{ramos} está fechado. Um tableaux é chamado de \textbf{aberto} se
+    não estiver fechado.
 \end{definition}
 
-\begin{definition}[Regras Disjuntivas]
-    Para qualquer prefixo $\sigma$:
-    \begin{mathpar}
-\label{disj_rules}
-        \inferrule{\sigma~X\vee Y}{\sigma~X~|~\sigma~Y} \qquad
-        \inferrule{\sigma~\neg(X\wedge Y)}{\sigma~\neg X~|~\sigma~\neg Y} \\
-        \inferrule{\sigma~X\rightarrow Y}{\sigma~\neg X~|~\sigma~Y}
-        \qquad
-        \inferrule{\sigma~\neg(X\leftrightarrow Y)}{\sigma~\neg(X \rightarrow
-        Y)~|~\sigma~\neg(Y \rightarrow X)}
-    \end{mathpar}
+\begin{definition}
+    Um conjunto finito $\Gamma$ de fórmulas é dito
+    \textbf{$\mathcal{C}_L$-consistente} se cada $\mathcal{C}_L$-tableaux para $\Gamma$
+    é aberto. Se existir pelo menos um $\mathcal{C}_L$-tableaux fechado para $\Gamma$
+    então $\Gamma$ é \textbf{$\mathcal{C}_L$-inconsistente}.
 \end{definition}
 
-\begin{definition}[Regra da Dupla Negação]
-    Para qualquer prefixo $\sigma$:
-    \begin{mathpar}
-\label{doublenegation}
-        \inferrule{\sigma~\neg\neg X}{\sigma~X} 
-    \end{mathpar}
+\begin{definition}
+    Um Cálculo baseado em Tableaux $\mathcal{C}_L$ é \textbf{correto} se para todos os
+    conjuntos finitos $\Gamma$ de fórmulas, se $\Gamma$ é $L$-satisfatível então $\Gamma$ é
+    $\mathcal{C}_L$-consistente. É \textbf{completo} se para todos os conjuntos
+    finitos $\Gamma$ de fórmulas, se $\Gamma$ é $\mathcal{C}_L$-consistente então $\Gamma$ é
+    $L$-satisfatível.
 \end{definition}
 
-\begin{definition}[Regras de Possibilidade]
-    Para qualquer prefixo $\sigma$:
-    \begin{mathpar}
-\label{doublenegation}
-        \inferrule{\sigma~\Diamond X}{\sigma.n X} \qquad
-        \inferrule{\sigma~\neg\Box X}{\sigma.n \neg X} 
-    \end{mathpar}
+\begin{definition}
+    Seja $\sigma$ uma regra de inferência pertencente a $\mathcal{C}_L$. Dizemos
+    que $\sigma$ é correta com respeito a $L$ se para qualquer instância $\sigma
+    '$ de $\sigma$, se o numerador de $\sigma '$ for $L$-satisfatível então o
+    denominador de $\sigma '$ também o é.
 \end{definition}
 
-\begin{definition}[Regras Básicas de Necessidade]
-    Para qualquer prefixo $\sigma$:
-    \begin{mathpar}
-\label{doublenegation}
-        \inferrule{\sigma~\Box X}{\sigma.n X} \qquad
-        \inferrule{\sigma~\neg\Diamond X}{\sigma.n \neg X} 
-    \end{mathpar}
-\end{definition}
+Qualquer cálculo baseado em tableaux $\mathcal{C}_L$ contendo somente regras corretas com respeito a $L$, é
+correto. 
 
-\begin{definition}[Fecho]
-    Um ramo do tableaux é dito \textit{fechado} se contém ambos $\sigma X$ e
-    $\sigma \neg X$ para alguma fórmula $X$. Um ramo que não está fechado, é
-    dito \textit{aberto}. Um tableaux é dito fechado se todos os seus ramos
-    estão fechados.
-\end{definition}
+O cálculo utilizado para implementar o gerador automático de modelos compreende
+um conjunto de regras de inferência para lidar com raciocínio tanto
+proposicional quando modal. A seguir, denotaremos por $\delta$ o
+resultado de unificar os rótulos das premissas de cada regra. Formalmente,
+a unificação é dada por uma função $\delta: \mathscr{P}(\mathbb{N})
+\longrightarrow \mathbb{N}$, onde $\delta(\{ml\}) = ml$, para qualquer outra
+entrada, $\delta$ não está definida. As regras de inferência na
+Figura~\ref{tableaux} só podem ser aplicadas se a unificação dos rótulos está
+definida\cite{DBLP:conf/tableaux/NalonHD15}.
 
-\begin{definition}[Prova por Tableaux]
-    Um tableaux fechado para $1 \neg Z$ é uma \textit{prova por tableaux} de
-    $Z$, e $Z$ é um \textit{teorema} se possui uma prova por tableaux.
-\end{definition}
-
-\begin{figure}[h!]
-    \label{fig:example1}
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{pgfonlayer}{nodelayer}
-                \node  (0) at (0, 2) {P};
-                \node  (1) at (0, 1) {P};
-                \node  (2) at (0, -0) {P};
-                \node  (3) at (-4, -2) {P};
-                \node  (4) at (4, -2) {P};
-                \node  (5) at (-4, -3) {P};
-                \node  (6) at (4, -3) {P};
-                \node  (7) at (-4, -4) {P};
-                \node  (8) at (4, -4) {P};
-                \node  (9) at (-4, -5) {P};
-                \node  (10) at (4, -5) {P};
-                \node  (11) at (-4, -6) {P};
-                \node  (12) at (4, -6) {P};
-                \node  (13) at (-4, -7) {P};
-                \node  (14) at (4, -7) {P};
-                \path[-] (2) edge node {} (3)
-                         (2) edge node {} (4);
-            \end{pgfonlayer}
-        \end{tikzpicture}
-    \end{center}
-    \caption{Exemplo de prova por tableaux}
-\end{figure}
-
-\begin{definition}[Regras especiais de necessidade]
-    \begin{mathpar}
-\label{conj_rules}
-        T \quad \inferrule{\sigma~\Box X}{\sigma~X} \qquad
-        \inferrule{\sigma~\neg\Diamond X}{\sigma~\neg X} \\
-        D \quad \inferrule{\sigma~\Box X}{\sigma \Diamond~X} \qquad
-        \inferrule{\sigma~\neg\Diamond X}{\sigma~\neg\Box X} \\
-        B \quad \inferrule{\sigma.n \Box X}{\sigma~X} \qquad
-        \inferrule{\sigma.n \neg\Diamond X}{\sigma~\neg X} \\
-        4 \quad \inferrule{\sigma~\Box X}{\sigma.n \Box X} \qquad
-        \inferrule{\sigma\neg\Diamond X}{\sigma.n \neg\Diamond X} \\
-        4r \quad \inferrule{\sigma.n \Box X}{\sigma~\Box X} \qquad
-        \inferrule{\sigma.n \neg\Diamond X}{\sigma~\neg\Diamond X} 
-    \end{mathpar}
-    
-\end{definition}
-
-\begin{table}
-    \begin{center}
-        \label{table:condicoes_quadro}
-        \caption{Relações que definem os sistemas modais}
-        \begin{tabular}{ll}
+\begin{figure*}[!tbh]
+    \centering
+    {\footnotesize
+        \begin{tabular}{|c|}
             \hline
-            Sistema & condições para classe de quadros \\
+            \\
+            \begin{tabular}{cc}
+                $
+                \begin{array}{cll}
+                    \mbox{[NEG]} &ml_1: l_1 ' \then \pos{a}~ l_1 \\ 
+                                  &\ ~\ \vdots \\
+                                  &ml_m: l_m ' \then \pos{a}~ l_m\\ \cline{2-2}
+                                  & ml+1: l_1 \vee \ldots \vee l_m \\
+                                  & onde\ ml = \delta(\{ml_1,\ldots, ml_m\})
+                \end{array}
+                $
+                &
+                $
+                \begin{array}{cll}
+                    \mbox{[POS]} &ml_1: l_1 ' \then \nec{a}~ l_1 \\ 
+                                  &\ ~\ \vdots \\
+                                  &ml_m: l_m ' \then \nec{a}~ l_m\\ 
+                                  &ml_{m+1}: l' \then \pos{a}~ l \\ \cline{2-2}
+                                  & ml+1: l_1 \wedge \ldots \wedge l_m \wedge l \\
+                                  & onde\ ml = \delta(\{ml_1,\ldots, ml_m,
+                ml_{m+1}\})
+                \end{array}
+                $
+            \end{tabular}
+            \\
+            \\
             \hline
-            $D$  & serial \\ 
-            $T$  & reflexivo \\ 
-            $B$  & reflexivo, simétrico\\ 
-            $K4$ & transitivo \\  
-            $S4$ & reflexivo, transitivo \\  
-            $S5$ & reflexivo, simétrico, transitivo \\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
-
-\begin{definition}[Regras de suposição]
-    Seja $L$ um dos sistemas modais para os quais a regras do tableaux estão
-    definidas. Seja também $S$ e $U$ conjuntos de fórmulas. Um tableaux usa $S$
-    como suposições globais e $U$ como suposições locais se as duas seguintes
-    regras de tableaux adicionais são admitidas:
-
-    \textit{Suposição Local:} Se $Y$ é qualquer elemento de $U$ então $1\ Y$ pode
-    ser adicionado ao final de qualquer ramo em aberto.
-
-    \textit{Suposição Global:} Se $Y$ é qualquer elemento de $S$ então $\sigma Y$
-    pode ser adicionado ao final de qualquer ramo em aberto no qual $\sigma$ já
-    aparece como prefixo.
-\end{definition}
-
-
-\begin{figure}
-    \label{fig:example2}
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{pgfonlayer}{nodelayer}
-                \node  (0) at (0, 2) {P};
-                \node  (1) at (0, 1) {P};
-                \node  (5) at (0, -0) {P};
-                \node  (6) at (0, -1) {P};
-                \node  (7) at (0, -2) {P};
-                \node  (2) at (0, -3) {P};
-                \node  (3) at (-4, -4) {P};
-                \node  (4) at (4, -4) {P};
-                \path[-] (2) edge node {} (3)
-                         (2) edge node {} (4);
-            \end{pgfonlayer}
-        \end{tikzpicture}
-    \end{center}
-    \caption{Exemplo de prova por tableaux}
-\end{figure}
+    \end{tabular}}
+            \caption{Regras de inferência do tableaux}
+            \label{tableaux}
+        \end{figure*}
 
 \subsection{Tableaux Clausal}
-Para esta seção, considere $L$ como um dos sistemas de lógica modal introduzidos
-anteriormente. No cálculo de tableaux clausal, os numeradores das regras são
-conjuntos de cláusulas, então para um cálclo de tableaux $L$-clausal, é exigido
-que os numeradores das regras sejam conjuntos de $L$-cláusulas.~\cite{clausal_tableaux}
+No cálculo de tableaux clausal, os numeradores das regras são conjuntos de
+cláusulas, então, para um cálculo de tableaux $L$-clausal, é exigido que os
+numeradores das regras sejam conjuntos de $L$-cláusulas (sendo $L$ uma linguagem
+ou um sistema da lógica modal). Para conjuntos de
+cláusulas $\Gamma$, $\Delta$, escrevemos $\Gamma;\Delta$ para denotar o conjunto $\Gamma \cup \Delta$, e
+escrevemos $\Gamma; \varphi$ para denotar o conjunto $\Gamma \cup \{\varphi\}$.
+
+Podemos diferenciar as regras como \textit{estáticas} ou \textit{transitivas}. A
+categorização por trás desta divisão é que nas regras estáticas, o numerador e o
+denominador representam o mesmo mundo (no mesmo
+modelo), enquanto que nas regras transitivas, o numerador e o denominador
+representam mundos distindos (mas ainda no mesmo
+modelo)~\cite{clausal_tableaux}. A intenção em ambos os tipos de regras é
+preservar a satisfatibilidade.
+
