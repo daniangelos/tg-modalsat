@@ -1,53 +1,35 @@
 \chapter{Revisão Teórica}
+\label{cap:teo}
+
 \section{Introdução a Lógica Modal}
 \label{sec:l_gica_modal}
 Neste capítulo, introduziremos brevemente a base do pensamento modal. 
 
-A lógica modal é determinada semanticamente por uma avaliação de necessidade e
-possibilidade --- na literatura, encontramos representações análogas, como por
-exemplo, de conhecimento e crença, respectivamente~\cite{belief} --- isto é, em resumo %forçado
-, a base da estrutura
-modal que data desde discursos do filósofo Leibniz: uma proposição é
-\textit{necessária} se ocorre em todos os possíveis mundos e \textit{possível}
-se ocorre em algum mundo~\cite{chellas:modal_logic}.  A ideia é que
-%revise 
+A lógica modal é determinada semanticamente pela avaliação de necessidade e
+possibilidade de uma proposição, levando em consideração diferentes possíveis
+contextos (ou \emph{mundos}). Na literatura, representações análogas à de
+necessidade e possibilidade são utilizadas para a avaliação de estados
+epistemológicos, como por exemplo, conhecimento e crença,
+respectivamente~\cite{belief}. Basicamente, uma proposição é \textit{necessária}
+se ocorre em todos os possíveis mundos e \textit{possível} se ocorre em algum
+mundo~\cite{chellas:modal_logic}.  A ideia é que
 diferentes ações ou objetos podem ser verdadeiros em mundos diferentes, mas
-qualquer coisa que
-ocorra em todos os possíveis mundos é necessário, enquanto o que ocorre em pelo
-menos um mundo, é possível.
-
-%As proposições são da forma $\Box A$
-%$\Diamond A$
+qualquer ideia que ocorra em todos os possíveis mundos é necessária, enquanto a
+que ocorre em pelo menos um mundo, é possível.
 
 Os operadores utilizados são os mesmos já conhecidos da lógica proposicional
-($\wedge$, $\vee$, $\rightarrow$ etc) com a inclusão de dois novos: $\Box$ e
-$\Diamond$.
-Uma sentença da forma $\Box A$ --- \textit{necessariamente} $A$ --- é verdadeira se,
-e somente se, $A$ é uma proposição verdadeira em todos os possíveis mundos; já
-uma sentença da forma $\Diamond A$ --- \textit{possivelmente} $A$ --- é verdadeira
-no caso em que $A$ é uma proposição verdadeira em algum possível mundo.
+($\wedge$, $\vee$, $\rightarrow$ etc) com a inclusão de dois novos:
+$\nec{\agent}$ e $\pos{\agent}$. Uma sentença da forma $\nec{\agent} \varphi$
+(\textit{necessariamente} $\varphi$) é verdadeira se, e somente se, $\varphi$ é
+uma proposição verdadeira em todos os possíveis mundos, de acordo com o agente
+$\agent$; já uma sentença da forma $\pos{\agent} \varphi$
+(\textit{possivelmente} $\varphi$) é verdadeira no caso em que $\varphi$ é uma
+proposição verdadeira em algum possível mundo, de acordo com o agente $\agent$.
 
 Uma ilustração válida para a lógica modal, é pensar em uma coleção de possíveis
 mundos, incluindo nosso próprio, o mundo real, onde sentenças da linguagem são
 possivelmente verdadeiras ou falsas. O propósito principal da lógica modal é
-modelar a ocorrência verdadeira destas sentenças, e isto é feito listando uma
-sequência, podendo ser esta lista infinita, de conjuntos destes possíveis mundos,
-\begin{equation}
-    P_0,\ P_1,\ P_2,\ldots
-\end{equation}
-
-A intuição por trás deste modelo é que, para cada número natural $n$, o conjunto
-$P_n$ contém somente os possíveis mundos onde a sentença $\mathbb{P}_n$ é
-verdadeira. Em outras palavras, a sequência 
-$P_0,\ P_1,\ P_2,\ldots$
-representa as sentenças at\^omicas estipulando em quais possíveis mundos elas
-ocorrem, ou seja, onde são verdadeiras,
-(e, por omissão, em quais mundos elas são falsas) da seguinte maneira:
-\begin{equation}
-    \mathbb{P}_n\ e\ verdadeiro\ em\ um\ possivel\ mundo\ \alpha\ se\ e\
-    somente\ se\
-    \alpha \in P_n 
-\end{equation}
+modelar a ocorrência verdadeira destas sentenças.
 
 A lógica modal pode ser expressa de diferentes formas e contar com diferentes
 axiomas através da ideia de sistemas, isto será explorado com mais detalhes 

@@ -1,8 +1,11 @@
+\newcommand{\agent}{\ensuremath{a}}
+\newcommand{\Agents}{\ensuremath{{\cal{A}}}}
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{definition2}[theorem]{Def.}
+\newtheorem{def2}[theorem]{Def.}
 
 \newenvironment{proof2}[1][Proof]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
@@ -62,7 +65,7 @@
 \newcommand{\relation}[2]{\mbox{$\mathcal #1$$_{#2}$}}
 %\newcommand{\universal}{\always^{*}}
 \newcommand{\universal}{\always^*}
-\newcommand{\snf}[1]{{\sf SNF}\mbox{$\textstyle _{#1}$}}
+\newcommand{\snf}[1]{{\sf SNF}\mbox{$_{\mbox{\scriptsize #1}}$}}
 \newcommand{\binomial}[2]{\left(\! \begin{array}{c}
                                  #1\\
                                  #2
@@ -78,5 +81,10 @@
 
 \newcommand{\Nat}{\mbox{$\mathbb N$}}
 
-\newcommand{\commentts}[1]{}
+%\newcommand{\comment}[1]{}
      
+\newcommand{\cfalse}{\constant{false}}
+\newcommand{\ctrue}{\constant{true}}
+\newcommand{\st}{w}
+\newcommand{\depth}{\sf profundidade}
+\newcommand{\model}[1]{{\cal #1}}

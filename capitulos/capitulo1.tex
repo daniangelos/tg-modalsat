@@ -1,9 +1,10 @@
 \chapter{Introdução}
+\label{cap:intro}
 
 Linguagens lógicas podem ser utilizadas para verificar propriedades de um
 sistema complexo, expressas através de possibilidade, crença, probabilidade
-entre outras modalidades. Diferentes modalidades definem diferentes lógicas
-modais.
+entre outras modalidades~\cite{FHMV95,rao:91c,HMM83,Hai82}. Diferentes
+modalidades definem diferentes lógicas modais.
 
 Um teorema é uma fórmula que pode ser provada com base nos axiomas e no conjunto
 de regras de inferência que definem um determinado cálculo. Uma vez que um
@@ -25,7 +26,7 @@ disso, dada a natureza das aplicações descritas com o auxílio destas lógicas
 normal o uso da combinação de diferentes linguagens modais. A combinação de
 linguagens, todavia, pode acarretar no aumento da complexidade ou mesmo na
 indecidibilidade do problema de satisfatibilidade na lógica
-resultante~\cite{mdml}. %MANY DIMENSIONAL MODAL LOGICS: plano de trabalho
+resultante~\cite{mdml}.
 Portanto, é importante o desenvolvimento de técnicas que possam ser utilizadas
 de modo uniforme na combinação de métodos de prova para lógicas obtidas a partir
 de fusões e/ou em linguagens que permitam interações.
@@ -36,19 +37,14 @@ construção de ferramentas que possam ser, de fato, utilizadas na verificação
 formal de sistemas complexos.
 
 O problema básico de satisfatibilidade da lógica modal K é
-PSPACE~\cite{complex_modal}. %THE COMPUTATIONAL COMPLEXITY OF PROV SYSTEM:plano
-Entretanto, as complexidades dos algoritmos propostos em~\cite{nalon} ainda não
-foram determinadas, %% REVISAR ESTE ITEM%%%
-sendo um dos objetos de investigação do atual projeto. Sabe-se, porém, que
-métodos de prova para lógica proposicional são
-intratáveis~\cite{complex_thproving}. % THE COMPLEXITY OF THE-PROVING:plano
-Em geral, métodos baseados em resolução, se ingenuamente implementados, levam
-também à utilização exponencial de espaço; entretanto, a utilização de
-estratégias garante a linearidade de espaço do método de resolução para lógicas
-proposicionais~\cite{toran:prop_resolution}. %NUMBER 9: PLANO
-É, portanto, nosso intuito conduzir investigação da extensão e implementação de
-estratégias conhecidas (e.g.\ resolução linear, deleção de unidade e subsunção)
-que permitam a implementação eficiente dos algoritmos propostos em~\cite{nalon}.
+PSPACE~\cite{complex_modal}. 
+Além disso, sabe-se que métodos de prova para lógica proposicional são
+intratáveis~\cite{complex_thproving}. Em~\cite{DBLP:conf/tableaux/NalonHD15},
+uma estratégia de busca por provas, baseada em níveis modais foi apresentada. A
+implementação e a avaliação desta estratégia, comparando resultados de
+eficiência com provadores no estado da arte, mostram que a separação em níveis
+modais pode auxiliar na melhoria do tempo para a obtenção de provas
+\cite{Nalon2016}.
 
 A geração automática de modelos é complementar àquela da prova de teoremas e
 realizada em paralelo com a avaliação experimental. Se o provador de teoremas
@@ -61,20 +57,15 @@ suporte ao entendimento teórico.
 O objetivo específico deste trabalho consiste na implementação de um gerador
 automático de modelos para a lógica modal proposicional K. A entrada será o
 conjunto de cláusulas fornecido pelo provador implementado
-em~\cite{silva:impl_provador}. %NUMBER 8: PLANO
+em~\cite{Nalon2016}. 
 A saída será a declaração da inexistência de um modelo, no caso do conjunto de
 cláusulas ser insatisfatível, ou a apresentação formal de um modelo que
 testemunhe a satisfatibilidade do conjunto de cláusulas.
 
 Os dados obtidos na experimentação prática serão analisados, em conformidade com
 o enfoque corrente, de forma comparativa a partir de \textit{benchmarks}
-estabelecidos e a partir de \textit{benchmarks} especialmente preparados para
-tal fim. Os resultados da experimentação serão publicados em relatório técnico,
-que será submetido, na forma de artigo, aos encontros anuais de análise de
-performance de provadores de teoremas, em coautoria com os demais estudantes
-envolvidos neste projeto. Tais resultados estão presentes neste trabalho na
-seção de resultados.
-
+estabelecidos e especialmente preparados para tal fim. Tais resultados são
+apresentados no Capítulo~\ref{cap:resultados}.
 
 
 
