@@ -33,16 +33,34 @@ de diferentes formas e contar com diferentes axiomas. %através da ideia de
 sistemas, isto será explorado com mais detalhes 
 %na seção~\ref{sec:sistemas}. 
 
-\section{Linguagens Lógicas}
+\section{Lógica}
+\label{sec:logicas}
+
+\input{capitulos/reasoning_about_logic}
+
+\subsection{Linguagens Lógicas}
 \label{sec:linguagens}
+Uma linguagem lógica é uma formalização.  Nesse sentido, é possível definir
+diversas linguagens lógicas que podem diferir em modalidades de aplicabilidade,
+expressividade e complexidade, por exemplo. A linguagem foco deste trabalho é a
+Linguagem Modal \system{K}{n}{}. Esta seção tem o objetivo de apresentar
+teoricamente, e de forma abstrata, uma visão geral desta linguagem, que será
+construída a partir de linguagens menos expressivas, já apresentadas com a noção
+de mundos possíveis, muito utilizada na lógica modal.
+
+%Lógica proposicional
+
+%Lógica modal um agente
+
+%Lógica multimodal
 
 \section{Formalização da Linguagem Modal \system{K}{n}{}}
+Definições formais podem ser úteis ao entendimento.
+Esta seção é dedicada a trazer o básico dos conceitos de sintaxe e semântica da linguagem da
+lógica modal. 
+
 \subsection{Sintaxe}
 \label{sec:sintaxe}
-
-Esta seção é dedicada a trazer o básico dos conceitos de sintaxe da linguagem da
-lógica modal. As definições formais apresentadas podem ser úteis ao
-entendimento.
 
 A linguagem proposicional clássica é formada por um conjunto enumerável de sentenças
 \textit{at\^omicas} (ou símbolos proposicionais): 
@@ -343,50 +361,7 @@ um nó que contém $\psi$.
 Qualquer cálculo baseado em tableaux $\mathcal{C}_L$ contendo somente regras corretas com respeito a $L$, é
 correto. 
 
-O cálculo utilizado para implementar o gerador automático de modelos compreende
-um conjunto de regras de inferência para lidar com raciocínio tanto
-proposicional quando modal. A seguir, denotaremos por $\delta$ o
-resultado de unificar os rótulos das premissas de cada regra. Formalmente,
-a unificação é dada por uma função $\delta: \mathscr{P}(\mathbb{N})
-\longrightarrow \mathbb{N}$, onde $\delta(\{ml\}) = ml$, para qualquer outra
-entrada, $\delta$ não está definida. As regras de inferência na
-Figura~\ref{tableaux} só podem ser aplicadas se a unificação dos rótulos está
-definida\cite{DBLP:conf/tableaux/NalonHD15}.
+O cálculo utilizado para implementar o gerador automático de modelos está
+especificado no capítulo~\ref{cap:construcao}.
 
-\begin{figure*}[!tbh]
-    \centering
-    {\footnotesize
-        \begin{tabular}{|c|}
-            \hline
-            \\
-            \begin{tabular}{cc}
-                $
-                \begin{array}{cll}
-                    \mbox{[NEG]} &ml_1: l_1 ' \then \pos{a}~ l_1 \\ 
-                                  &\ ~\ \vdots \\
-                                  &ml_m: l_m ' \then \pos{a}~ l_m\\ \cline{2-2}
-                                  & ml+1: l_1 \vee \ldots \vee l_m \\
-                                  & onde\ ml = \delta(\{ml_1,\ldots, ml_m\})
-                \end{array}
-                $
-                &
-                $
-                \begin{array}{cll}
-                    \mbox{[POS]} &ml_1: l_1 ' \then \nec{a}~ l_1 \\ 
-                                  &\ ~\ \vdots \\
-                                  &ml_m: l_m ' \then \nec{a}~ l_m\\ 
-                                  &ml_{m+1}: l' \then \pos{a}~ l \\ \cline{2-2}
-                                  & ml+1: l_1 \wedge \ldots \wedge l_m \wedge l \\
-                                  & onde\ ml = \delta(\{ml_1,\ldots, ml_m,
-                ml_{m+1}\})
-                \end{array}
-                $
-            \end{tabular}
-            \\
-            \\
-            \hline
-    \end{tabular}}
-            \caption{Regras de inferência do tableaux}
-            \label{tableaux}
-        \end{figure*}
-
+\subsection{Tableaux Clausal}

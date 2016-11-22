@@ -1,3 +1,52 @@
 \chapter{Construção}
 \label{cap:construcao}
 
+\section{Cálculo}
+\label{sec:calc}
+O cálculo utilizado para implementar o gerador automático de modelos compreende
+um conjunto de regras de inferência para lidar com raciocínio tanto
+proposicional quando modal. A seguir, denotaremos por $\delta$ o
+resultado de unificar os rótulos das premissas de cada regra. Formalmente,
+a unificação é dada por uma função $\delta: \mathscr{P}(\mathbb{N})
+\longrightarrow \mathbb{N}$, onde $\delta(\{ml\}) = ml$, para qualquer outra
+entrada, $\delta$ não está definida. As regras de inferência na
+Figura~\ref{tableaux} só podem ser aplicadas se a unificação dos rótulos está
+definida\cite{DBLP:conf/tableaux/NalonHD15}.
+
+\begin{figure}[!tbh]
+    \centering
+    {\footnotesize
+        \begin{tabular}{|c|}
+            \hline
+            \\
+            \begin{tabular}{cc}
+                $
+                \begin{array}{cll}
+                    \mbox{[NEG]} &ml_1: l_1 ' \then \pos{a}~ l_1 \\ 
+                                  &\ ~\ \vdots \\
+                                  &ml_m: l_m ' \then \pos{a}~ l_m\\ \cline{2-2}
+                                  & ml+1: l_1 \vee \ldots \vee l_m \\
+                                  & onde\ ml = \delta(\{ml_1,\ldots, ml_m\})
+                \end{array}
+                $
+                &
+                $
+                \begin{array}{cll}
+                    \mbox{[POS]} &ml_1: l_1 ' \then \nec{a}~ l_1 \\ 
+                                  &\ ~\ \vdots \\
+                                  &ml_m: l_m ' \then \nec{a}~ l_m\\ 
+                                  &ml_{m+1}: l' \then \pos{a}~ l \\ \cline{2-2}
+                                  & ml+1: l_1 \wedge \ldots \wedge l_m \wedge l \\
+                                  & onde\ ml = \delta(\{ml_1,\ldots, ml_m,
+                ml_{m+1}\})
+                \end{array}
+                $
+            \end{tabular}
+            \\
+            \\
+            \hline
+    \end{tabular}}
+            \caption{Regras de inferência do tableaux}
+            \label{tableaux}
+        \end{figure}
+
