@@ -1,0 +1,40 @@
+Na Lógica Proposicional, existe apenas um contexto no qual se pode raciocinar.
+Se uma proposição é verdadeira, não é possível que ela seja falsa. Podemos
+estender a noção estudada nesta lógica para uma visão mais ampla, que dependa
+dos contextos que se é possível enxergar, ou seja, raciocinar sobre, aumentando o
+poder de expressividade da linguagem vista anteriormente. A Lógica Modal define
+uma dessas possíveis extensões.
+
+Além das noções expressas através dos operadores proposicionais, a Lógica Modal
+estuda argumentos cuja validade depende das noções de ``necessidade'' e
+``possibilidade'' (representações análogas são possíveis e foram citadas no
+início deste capítulo). Estas noções dizem respeito a valoração das proposições
+em diferentes contextos. A notação utilizada para representar estes dois novos
+operadores e suas respectivas semânticas na Linguagem Modal estão expressas na Tabela~\ref{tab:op_modal}.
+
+\begin{table}[!h]
+    \label{tab:op_modal}
+    \caption{Operadores Modais}
+\begin{center}
+    \begin{tabular}{|rcl|}
+       \hline 
+       $\pos{} p$ & $:=$ & $p$ é possível, ou seja, $p$ é verdadeiro em algum mundo
+       possível\\
+       $\nec{} p$ & $:=$ & $p$ é necessário, ou seja, $p$ é verdadeiro em todos os mundos
+       possíveis\\
+       \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+As regras de formação de fórmulas são as mesmas da Linguagem Proposicional, com
+a seguinte extensão para cobrir os operadores modais:
+
+\begin{definition}
+   Se $\varphi$ é uma fórmula bem formada então:
+   \begin{itemize}
+       \item [$(vii)$] $\pos{} \varphi$ 
+       \item [$(viii)$] $\nec{} \varphi$ 
+   \end{itemize}
+   também são fórmulas bem formadas.
+\end{definition}

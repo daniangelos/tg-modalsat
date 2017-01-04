@@ -24,10 +24,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage{mathtools}
 \usepackage{mhchem}
+\usepackage{color}
+\usepackage{pgf}
 \usepackage{tikz}
-\usetikzlibrary{trees,er,matrix,mindmap,backgrounds}
-\usetikzlibrary{shadings,intersections,calc}
-\usetikzlibrary{shapes,arrows,patterns,snakes}
+\usepackage[tikz]{bclogo}
+\usetikzlibrary{shapes,snakes,arrows,automata,trees,shadows,fit,fadings,calc,matrix,plotmarks}
 \usepackage{pgfplots}
 \usepackage{pgfkeys}
 \usepackage{mathrsfs}
@@ -159,10 +160,16 @@ height=7cm]
   \input{capitulos/capitulo2}
   \input{capitulos/capitulo3}
   \input{capitulos/capitulo4}
+  \input{capitulos/capitulo5}
+  \input{capitulos/capitulo6}
   % ...
+
+  \input{capitulos/apendice}
 
   \postextual
   \bibliographystyle{plain}
   \bibliography{arw12,abbreviations,aiml04,knowledge,logic,mine,modal,ours,p3,theorem-proving,theory,tl}
+\appendix
+
 
 \end{document}

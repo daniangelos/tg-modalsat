@@ -1,5 +1,7 @@
-\chapter{Construção}
+\chapter{Cálculo}
 \label{cap:construcao}
+
+\section{Cláusulas}
 
 \section{Cálculo}
 \label{sec:calc}
@@ -19,34 +21,46 @@ definida\cite{DBLP:conf/tableaux/NalonHD15}.
         \begin{tabular}{|c|}
             \hline
             \\
-            \begin{tabular}{cc}
                 $
                 \begin{array}{cll}
-                    \mbox{[NEG]} &ml_1: l_1 ' \then \pos{a}~ l_1 \\ 
+                    \mbox{[PROP]} &ml_1: \bigvee^r_{b=1} l_b  \\ 
+                                  &ml_2: \\ 
                                   &\ ~\ \vdots \\
-                                  &ml_m: l_m ' \then \pos{a}~ l_m\\ \cline{2-2}
-                                  & ml+1: l_1 \vee \ldots \vee l_m \\
-                                  & onde\ ml = \delta(\{ml_1,\ldots, ml_m\})
-                \end{array}
-                $
-                &
-                $
-                \begin{array}{cll}
-                    \mbox{[POS]} &ml_1: l_1 ' \then \nec{a}~ l_1 \\ 
-                                  &\ ~\ \vdots \\
-                                  &ml_m: l_m ' \then \nec{a}~ l_m\\ 
-                                  &ml_{m+1}: l' \then \pos{a}~ l \\ \cline{2-2}
+                                  &ml_{m}: l' \then \pos{a}~ l \\ \cline{2-2}
                                   & ml+1: l_1 \wedge \ldots \wedge l_m \wedge l \\
                                   & onde\ ml = \delta(\{ml_1,\ldots, ml_m,
                 ml_{m+1}\})
                 \end{array}
                 $
-            \end{tabular}
-            \\
             \\
             \hline
     \end{tabular}}
-            \caption{Regras de inferência do tableaux}
+            \caption{Regras de inferência do tableaux para cláusulas
+            proposicionais}
+            \label{tableaux}
+        \end{figure}
+
+
+\begin{figure}[!tbh]
+    \centering
+    {\footnotesize
+        \begin{tabular}{|c|}
+            \hline
+            \\
+                $
+                \begin{array}{cll}
+                    \mbox{[POS]} &ml_1: l_1 ' \then \nec{a}~ l_1 \\ 
+                                  &\ ~\ \vdots \\
+                                  &ml_m: l_m ' \then \nec{a}~ l_m\\ \cline{2-2}
+                                  & ml+1: l_1 \wedge \ldots \wedge l_m \wedge l \\
+                                  & onde\ ml = \delta(\{ml_1,\ldots, ml_m,
+                ml_{m+1}\})
+                \end{array}
+                $
+            \\
+            \hline
+    \end{tabular}}
+            \caption{Regras de inferência do tableaux para cláusulas modais}
             \label{tableaux}
         \end{figure}
 

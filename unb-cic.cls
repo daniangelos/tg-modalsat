@@ -872,8 +872,8 @@
 
 \newenvironment{resumo}
 	{\begin{paginatitulo}%
-     	\pdfbookmark{\abstractname}{resumo}%
-    	\chapter*{\abstractname}}%
+     	\pdfbookmark{Resumo}{resumo}%
+    	\chapter*{Resumo}}%
 		{\vskip 15pt\noindent\textbf{Palavras-chave:}\ \@@palavraschave%
     \end{paginatitulo}}
 
